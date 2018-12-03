@@ -2936,8 +2936,13 @@ var Pee = [     //NAMING IS HARD
         [4,2,3,1,4294919219,4288243251,40,4,0,2,4289366152,1,16,16,8,8,0,20,150,50,4,100,0,0,0,0,5,10,1,100,125,20,90,1,25,0,0,-10,0,0,10,1,0,5,4294919168,2,8,16,8,8,50,10,30,100,0,1,1,1,3,1,0,100,10,10,15,14,15,22,40],
         //My enemies end here
         [5, 0, 2, 2, 8421504, 10053171, 500, 3, 0, 2, 4286611584, 1, 8, 8, 8, 8, 0, 0, 100, 10, 0, 100, 0, 0, 0, 0, 1, 3, 10, 10, 10, 15, 120, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 100, 0, 0, 0, 0, 0, 0],
+        //Army's Enemy starts here
                 //Grass Land 1
-        [6,1,4,1,4278234880,4280449058,60,3,1,1,4292664540,1,12,12,10,10,0,0,50,10,0,100,0,0,0,0,2,4,1,10,80,95,50,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,100,0,0,0,0,0,0,0,150,10,0,0,0,0,0,0],
+        [5, 1, 24, 1, 5600854, 2508073, 40, 3, 1, 4, 4280698153, 1, 16, 16, 8, 8, 0, 0, 20, 10, 0, 100, 0, 0, 0, 0, 3, 4, 1, 15, 50, 20, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 10, 0, 0, 0, 0, 0, 0],
+		[6, 1, 4, 1, 2518299, 21504, 70, 3, 1, 4, 4280698153, 1, 12, 12, 4, 4, 0, 0, 80, 60, 0, 100, 0, 2, 0, 0, 1, 2, 1, 5, 50, 200, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 20, 0, 0, 0, 0, 0, 0],
+        [6, 2, 1, 1, 7627324, 6513507, 50, 3, 1, 1, 4283914583, 1, 16, 16, 8, 8, 0, 0, 80, 10, 0, 100, 0, 0, 0, 0, 2, 6, 1, 10, 50, 20, 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 30, 0, 0, 0, 0, 0, 0],
+        [7, 1, 24, 2, 5600854, 2508073, 150, 3, 1, 4, 4280698153, 1, 24, 24, 12, 12, 0, 0, 20, 40, 0, 100, 0, 0, 0, 0, 6, 8, 1, 15, 5, 20, 40, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 150, 30, 0, 0, 0, 0, 0, 0],
+        [8, 2, 1, 3, 5982758, 4934475, 500, 1, 1, 1, 4283914583, 1, 64, 32, 48, 16, 0, 0, 200, 40, 1, 104, 0, 0, 0, 0, 15, 20, 1, 5, 100, 1E3, 150, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 650, 200, 0, 0, 0, 0, 0, 0],
         		//Castle
 		[20, 4, 4, 3, 13421772, 10053171, 5E3, 5, 1, 1, 4294918208, 1, 48, 16, 48, 8, 0, 0, 100, 20, 5, 99, 0, 0, 0, 0, 20, 40, 1, 0, 50, 300, 40, 0, 0, 0, 0, 0, 0, 0, 90, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1E3, 1E3, 29, 3, 0, 0, 30, 20],
         [0, 0, 0, 0, 0, 0, 0, 4, 0, 2, 4286611584, 1, 8, 8, 8, 8, 0, 0, 300, 10, 3, 100, 0, 0, 0, 0, 3, 4, 12, 200, 50, 15, 200, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 5, 2164219920, 1, 16, 48, 12, 36, 50, 20, 0, 100, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -4446,8 +4451,8 @@ hh.prototype.M = function(a, b, c, d) {
             J(Va, z(m[0]), z(n[0]), z(16 * d), z(16 * d), 16 * e, 0, 16, 16, g)
     }
 };
-var ze = 8,
-    Ae = [3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+var ze = 30,
+    Ae = [3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     Ce = 1,
     Be = 2,
     kg = 4,
@@ -4457,15 +4462,40 @@ var ze = 8,
     //Number of enemies per book panel
 
     gg = [1, 2, 3, 4, 5, 5, 6, 6, 7, 7, 9, 5, 6, 7, 1, 8, 8, 9, 9, 9, 1, 10, 11, 11, 12, 12, 13, 13, 14, 14, 12, 13, 14, 1, 15, 15, 15, 16, 16, 1, 17, 17, 18, 17, 18, 18, 18, 1, 19, 19, 19, 20, 20, 20, 21, 23, 20, 21, 21, 22, 22, 23, 22, 23, 24, 24, 24, 24, 24, 25, 1, 1, 24, 25, 26, 26, 26, 1, 27, 27, 28, 28, 1, 29, 30, 31, 32, 33, 1, 1],
-    Uf = "Town;Opening Street;Grassland 1;Grassland 2;Grassland 3;harderpathfku;Grassland 5;Grassland 6;Grassland 7;Castle Gate;Castle;Hill Country 1;Hill Country 2;Hill Country 3;Lake;Forest 1;Forest 2;Cavern 1;Cavern 2;Cavern 3;Village;Seaside 1;Seaside 2;Seaside 3;Seaside 4;Submarine 1;Submarine 2;Submarine 3;Submarine 4;Submarine Shrine;Mist Grove 1;Mist Grove 2;Mist Grove 3;???;Desert 1;Desert 2;Desert 3;Desert 4;Desert 5;Oasis;Desert 6;Desert 7;Pyramid;Desert 8;Beach 1;Beach 2;Beach 3;Resort;Cavern 4;Cavern 5;Cavern 6;Snowfield 1;Snowfield 2;Mountain 1;Mountain 2;Mountaintop;Snowfield 3;Snowfield 4;Snowfield 5;Snowfield 6;Snowfield 7;Snowfield 8;Frozen Lake;Ice Castle;Snowfield 9;Beach 4;Forest 3;Forest 4;Forest 5;Forest 6;Forget Tree;!!!;Hell 1;Hell 2;Hell 3;Hell 4;Hell 5;Island;Hell 6;Inferno 1;Inferno 2;Inferno 3;Blood Lake;Cavern 7;Cavern 8;Hell 7;Hell 8;Hell Gate;Hell Castle;Volcano".split(";"),
+    Uf = "Town;The Start;Grassland 1;Grassland 2;Grassland 3;Grassland 4;Grassland 5;Grassland 6;Grassland 7;Grassland 8;Grassland 9;Grassland 10;Grassland 11;Path 2 (1);Path 2 (2);'Harderpathfuku' (1);'Harderpathfuku' (2);'Harderpathfuku' (3);'Harderpathfuku' (4);'Harderpathfuku' (5);Castle Gate;Castle;Hill Country 1;Hill Country 2;Hill Country 3;Lake;Forest 1;Forest 2;Cavern 1;Cavern 2;Cavern 3;Village;Seaside 1;Seaside 2;Seaside 3;Seaside 4;Submarine 1;Submarine 2;Submarine 3;Submarine 4;Submarine Shrine;Mist Grove 1;Mist Grove 2;Mist Grove 3;???;Desert 1;Desert 2;Desert 3;Desert 4;Desert 5;Oasis;Desert 6;Desert 7;Pyramid;Desert 8;Beach 1;Beach 2;Beach 3;Resort;Cavern 4;Cavern 5;Cavern 6;Snowfield 1;Snowfield 2;Mountain 1;Mountain 2;Mountaintop;Snowfield 3;Snowfield 4;Snowfield 5;Snowfield 6;Snowfield 7;Snowfield 8;Frozen Lake;Ice Castle;Snowfield 9;Beach 4;Forest 3;Forest 4;Forest 5;Forest 6;Forget Tree;!!!;Hell 1;Hell 2;Hell 3;Hell 4;Hell 5;Island;Hell 6;Inferno 1;Inferno 2;Inferno 3;Blood Lake;Cavern 7;Cavern 8;Hell 7;Hell 8;Hell Gate;Hell Castle;Volcano".split(";"),
     De = [
-        [6, 28, 0, 1, 0],
-        [9, 28, 0, 2, 0],
-        [10, 24, 0, 3, 4],
-        [11, 19.8, 0, 5, 6],
-        [8, 20.2, 0, 6, 0],
-        [14, 22, 0, 0, 0],
-        [9, 16, 0, 0, 0],
+        [6, 28, 0, 1, 0], //mind controlled by Ewan ;p
+        [10, 26, 0, 2, 15],
+        [8, 23, 0, 3, 0], //GL1 
+        [11, 20, 0, 4, 0], //GL2
+        [9, 16, 0, 5, 13], //GL3
+        [9, 10, 0, 6, 0], //GL4
+        [12, 8, 0, 7, 0], //GL5
+        [15, 6, 0, 8, 0], //GL6
+        [19, 8, 0, 9, 0], //Gl7
+        [21, 11, 0, 10, 0], //GL8
+        [27, 10, 0, 11, 0], //GL9
+        [28, 16, 0, 12, 0], //GL 10
+        [32, 19, 0, 0, 0], //GL 11
+        [16, 14, 0, 14, 0], //Path2 (1)
+        [20, 16, 0, 11, 0], //Path 2(2)
+        [12, 23, 0, 16, 0], //'Harderpathfuku' (1)
+        [18, 24, 0, 17, 0], //'Harderpathfuku' (2)
+        [20, 28, 0, 18, 0], //'Harderpathfuku' (3)
+        [26, 29, 0, 19, 0], //'Harderpathfuku' (4) 
+        [31, 31, 0, 0, 0], //'Harderpathfuku' (5)
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0],
@@ -4500,7 +4530,7 @@ var ze = 8,
             [0, 0, O, 0, 0, O, 0, 0, O, 0, 0, O, 0, 0],
             [0, 100, O, 0]
         ],
-        [		//Opening Street (Random)
+        [		//The Start (Random)
           [0, 1, O, 0, 5, Q, 1, 1],
           [0, 2, O, 0, 6, Q, 1, 3],
           [0, 6, O, 0, 6, P, 1, 2, T, 2, 1],
@@ -4513,50 +4543,121 @@ var ze = 8,
           [0, 100, P, 1, 2, Lf, 3, 2, R, 4, 1]
         ],
         [		//Grass Land 1
+            [0, 1, O, 5, 5],
+            [0, 1, O, 5, 10],
+            [0, 1, O, 5, 8, R, 6, 2],
+            [0, 1, O, 5, 6, S, 7, 2],
+            [0, 1, O, 5, 10, Q, 8, 2],
+            [0, 1, O, 5, 8, O, 6, 4, Q, 8, 1],
+            [0, 1, O, 5, 4, O, 8, 3, S, 7, 6],
+            [0, 1, O, 5, 10, O, 6, 4, Q, 8, 4, S, 7, 8],
+            [0, 100, P, 6, 2, S, 7, 2, R, 8, 4, S, 9, 1]
+        ],
+        [		//Grass Land 2
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [		//Grass Land 1
+        [		//Grass Land 3
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [		//Grass Land 1
+        [		//Grass Land 4
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [		//Grass Land 1
+        [		//Grass Land 5
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [		//Grass Land 1
+        [		//Grass Land 6
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [		//Grass Land 1
+        [		//Grass Land 7
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [		//Grass Land 1
+        [		//Grass Land 8
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [		//Grass Land 1
+        [		//Grass Land 9
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [		//Grass Land 1
+        [		//Grass Land 10
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [		//Grass Land 1
+        [		//Grass Land 11
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [		//Grass Land 1
+        [		//Path (1)
+            [0, 1, O, 5, 1],
+            [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
+        ],
+        [		//Path (2)
+            [0, 1, O, 5, 18],
+            [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
+        ],
+        [		//HarderPath1
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [		//Grass Land 1
+        [		//HarderPath2
+            [0, 1, O, 5, 9],
+            [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
+        ],
+        [		//HarderPath3
+            [0, 1, O, 5, 9],
+            [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
+        ],
+        [		//HarderPath4
+            [0, 1, O, 5, 9],
+            [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
+        ],
+        [		//HarderPath5
+            [0, 1, O, 5, 9],
+            [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
+        ],
+        [		//Grass Land 19
+            [0, 1, O, 5, 9],
+            [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
+        ],
+        [		//Grass Land 20
+            [0, 1, O, 5, 9],
+            [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
+        ],
+        [		//Grass Land 21
+            [0, 1, O, 5, 9],
+            [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
+        ],
+        [		//Grass Land 22
+            [0, 1, O, 5, 9],
+            [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
+        ],
+        [		//Grass Land 23
+            [0, 1, O, 5, 9],
+            [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
+        ],
+        [		//Grass Land 24
+            [0, 1, O, 5, 9],
+            [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
+        ],
+        [		//Grass Land 25
+            [0, 1, O, 5, 9],
+            [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
+        ],
+        [		//Grass Land 26
+            [0, 1, O, 5, 9],
+            [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
+        ],
+        [		//Grass Land 27
+            [0, 1, O, 5, 9],
+            [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
+        ],
+        [		//Grass Land 28
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
