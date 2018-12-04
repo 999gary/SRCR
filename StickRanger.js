@@ -3,9 +3,8 @@
  The games source code use is prohibition. <-- lol who cares
                               english/10
 */
-const {
-    webFrame
-} = require('electron');
+
+const {webFrame} = require('electron');
 const path = require('path');
 const fs = require('fs');
 var eZoom = 2;
@@ -105,9 +104,9 @@ var saveName = "def",
     xc = 0,
     yc = 0,
     zc = 1,
-    Ac = [0, 0, 0, 0, 0, 0, 0, 0], //AT buff percent
-    Bc = [0, 0, 0, 0, 0, 0, 0, 0], //DF buff
-    Cc = [0, 0, 0, 0, 0, 0, 0, 0], //Priest MP Aura thing
+    Ac = [0, 0, 0, 0, 0, 0, 0, 0],      //AT buff percent
+    Bc = [0, 0, 0, 0, 0, 0, 0, 0],      //DF buff
+    Cc = [0, 0, 0, 0, 0, 0, 0, 0],      //Priest MP Aura thing
     q = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     Dc = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     Ec = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -253,34 +252,26 @@ u[289] = ["ring", 0, 100, 18, 41, 8, 4291611852, 25, 0, 0, 2, 3, 0, 0, 20, 30, 6
 //My new weapons begin here (RandomMcSomethin/Mr. Flosty/BootlegDarkBlaze):
 //Slash Glove 1: 1-3 damage, fires off physical projectiles from double the range of most gloves (and shouldn't require MP to do so) and at a slower rate
 //This weapon mostly provides a 'safer, less damage' approach to a boxer weapon
-u[7] = ["slash glove", 1, 500, 3, 2, 1, 4282681429, 0, 3, 0, 1, 3, 1, 5, 14, 21, 30, 1, 26, 4291624874, 1, 16, 16, 8, 8, 0, 15, 20, 5, 0, 101, 0, 0, 50, 0, 0, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 16, 16, 16, 16, 0, 0, 0, 0, 0, 100, 0, 0];
+u[7] = ["slash glove",1,500,3,2,1,4282681429,0,3,0,1,3,1,5,14,21,30,1,26,4291624874,1,16,16,8,8,0,15,20,5,0,101,0,0,50,0,0,-1,0,0,0,0,0,0,0,0,1,16,16,16,16,0,0,0,0,0,100,0,0];
 //Triple Sword 1: 5-10 damage, fires off three nigh-stationary sword attacks each dealing 5-10 damage at a cost of 15 MP
 //This weapon is a physical-magical weapon that may need balancing damage-wise, but the one arrows won't necessarily hit the target each time
-u[8] = ["triple sword", 1, 500, 4, 3, 2, 4292726015, 0, 7, 1, 5, 10, 3, 5, 20, 30, 30, 1, 27, 4292726015, 1, 16, 32, 8, 16, 25, 5, 10, 5, 0, 90, 1, 0, 0, 0, 10, 15, 0, 0, 5, 10, 3, 0, 0, 0, 1, 16, 16, 16, 16, 0, 0, 0, 0, 0, 100, 0, 0];
+u[8] = ["triple sword",1,500,4,3,2,4292726015,0,7,1,5,10,3,5,20,30,30,1,27,4292726015,1,16,32,8,16,25,5,10,5,0,90,1,0,0,0,10,15,0,0,5,10,3,0,0,0,1,16,16,16,16,0,0,0,0,0,100,0,0];
 //Snipe Shot 1: 5-10 damage, fires off a single arrow with higher-than usual gravity
 //High AGI, high range, and moderate damage make this weapon a fairly safe option
-u[9] = ["snipe shot", 1, 500, 5, 4, 3, 4289344273, 0, 4, 0, 5, 10, 1, 80, 80, 100, 135, 1, 3, 4289352994, 1, 16, 16, 8, 8, 0, 50, 200, 50, 6, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 16, 16, 16, 16, 0, 0, 0, 0, 0, 100, 0, 0];
+u[9] = ["snipe shot",1,500,5,4,3,4289344273,0,4,0,5,10,1,80,80,100,135,1,3,4289352994,1,16,16,8,8,0,50,200,50,6,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,16,16,16,16,0,0,0,0,0,100,0,0];
 //Spark Barrage 1: 1-3 thunder damage, fires off five bolts from around the magician
 //Not much to say here, but it excels mostly in deadling damage to single targets
-u[10] = ["spark barrage", 1, 500, 6, 5, 4, 4294954018, 0, 5, 0, 1, 3, 5, 1, 80, 90, 90, 1, 10, 4294958370, 2, 16, 16, 8, 8, 25, 5, 30, 5, 0, 110, 0, 0, 0, 3, 0, 0, 0, 0, 1, 3, 1, 1, 10, 4294958370, 1, 16, 16, 8, 8, 0, 5, 30, 5, 0, 110, 0, 0];
+u[10] = ["spark barrage",1,500,6,5,4,4294954018,0,5,0,1,3,5,1,80,90,90,1,10,4294958370,2,16,16,8,8,25,5,30,5,0,110,0,0,0,3,0,0,0,0,1,3,1,1,10,4294958370,1,16,16,8,8,0,5,30,5,0,110,0,0];
 //Twin Cracker 1: 1-4 fire damage (10% burn rate), fires off two flares that explode into three one arrows like Freeze Explosion 6, dealing 1-3 fire damage each
 //Someone had to do the whip, this one's decent at crowd control
-u[11] = ["twin cracker", 1, 500, 15, 35, 7, 4293805090, 0, 10, 0, 1, 4, 2, 10, 15, 20, 40, 1, 15, 4294958472, 2, 16, 16, 8, 8, 25, 5, 1000, 5, 3, 100, 0, 0, 0, 1, 25, 10, 3, 1, 1, 3, 3, 1, 4, 4294945314, 2, 8, 32, 8, 16, 0, 9, 50, 5, 0, 10, 0, 0];
+u[11] = ["twin cracker",1,500,15,35,7,4293805090,0,10,0,1,4,2,10,15,20,40,1,15,4294958472,2,16,16,8,8,25,5,1000,5,3,100,0,0,0,1,25,10,3,1,1,3,3,1,4,4294945314,2,8,32,8,16,0,9,50,5,0,10,0,0];
 //Matrix Ring 1: 3-4 damage, damages enemies across time and space via manipulation of the matrix (and by that, I mean it fires off a shock that descends and eventually deals splash damage to enemies at the cost of 10 MP)
 //Essentially an alternate version of Fire Ring 1 that focuses on spreading out damage across multiple enemies
-u[12] = ["matrix ring", 1, 500, 18, 41, 8, 4278255360, 25, 1, 1, 3, 4, 1, 0, 20, 30, 60, 0, 14, 4278255360, 1, 32, 16, 8, 8, 0, 49, 50, 30, 1, 100, 0, 1, 0, 0, 0, 10, 0, 1, 3, 4, 3, 1, 4, 4294945314, 2, 8, 32, 8, 16, 0, 9, 50, 5, 0, 10, 0, 0]
+u[12] = ["matrix ring",1,500,18,41,8,4278255360,25,1,1,3,4,1,0,20,30,60,0,14,4278255360,1,32,16,8,8,0,49,50,30,1,100,0,1,0,0,0,10,0,1,3,4,3,1,4,4294945314,2,8,32,8,16,0,9,50,5,0,10,0,0]
 //My new weapon proposals end here, ~RandomMcSomethin/Mr. Flosty/BootlegDarkBlaze
-u[13] = ["Staff of Damage", 1, 0, 12, 11, 5, 4289667618, 0, 6, 0, 10, 10, 1, 0, 20, 30, 80, 0, 15, 4289929762, 2, 16, 16, 16, 16, 0, 0, 40, 10, 0, 100, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 16, 16, 16, 16, 0, 0, 0, 0, 0, 100, 0, 0];
-u[14] = ["Ball Blaster", 1, 0, 14, 32, 6, 4285936162, 0, 3, 0, 12, 16, 1, 60, 80, 90, 80, 0, 2, 4282598211, 1, 12, 12, 10, 10, 0, 0, 25, 10, 0, 100, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 120];
+u[13] = ["Staff of Damage",1,0,12,11,5,4289667618,0,6,0,10,10,1,0,20,30,80,0,15,4289929762,2,16,16,16,16,0,0,40,10,0,100,0,0,0,0,0,2,0,0,0,0,0,0,0,0,1,16,16,16,16,0,0,0,0,0,100,0,0];
+u[14] = ["Ball Blaster",1,0,14,32,6,4285936162,0,3,0,12,16,1,60,80,90,80,0,2,4282598211,1,12,12,10,10,0,0,25,10,0,100,0,0,0,0,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,120];
 //-Lightning Lord
-
-//im gonna make weapons...
-//-Marcossanches
-//If some weapon is unbalanced, fell free to balance it out as you want.
-u[15] = ["arrow glove",1,750,3,2,1,4282664004,0,3,0,5,8,3,60,12,22,15,1,3,4282664004,2,16,16,8,8,0,20,50,10,0,77,1,0,0,0,0,40,0,0,7,10,0,0,0,0,1,16,16,16,16,0,0,0,0,0,100,0,0];
-u[16] = ["chill sword",1,500,4,3,2,4289374975,0,109,0,10,15,1,0.50,20,30,30,0,7,4289374975,1,8,8,6,6,0,0,50,10,0,100,0,0,0,2,25,20,0,0,2,3,12,0,0,0,1,16,16,16,16,0,0,0,0,0,100,0,0];
-u[17] = ["triple fire",1,500,6,5,4,4294919202,0,204,0,4,10,3,80,80,90,90,1,5,4294919202,2,16,24,8,8,5,0,200,10,3,100,1,0,0,1,40,0,0,0,0,0,0,0,0,0,1,16,16,16,16,0,0,0,0,0,100,0,0];
-u[18] = ["rapid reload",1,500,14,61,6,4286028219,0,3,0,7,14,1,40,10,15,60,1,17,4286028219,1,16,16,6,6,0,0,90,10,0,100,0,0,0,0,0,3,0,0,0,0,0,0,0,0,1,16,16,16,16,0,0,0,0,0,100,0,0,7,35];
 //Compo Items
 u[19] = ["White Stone", 1, 400, 7, 6, 9, 4294967295, ld, 50, 0, "Max LP +50", ""];
 u[20] = ["Red Stone", 1, 400, 7, 6, 9, 4294914867, md, 5, 0, "STR +5", ""];
@@ -594,9 +585,7 @@ function me(a) {
         l = sb = nb = h = mb = f = 0;
         tb = 3;
         ub = !1;
-        for (a = 0; 4 > a; a++) {
-            fc[a] = 0, reloadCD[a] = 1
-        };
+        for (a = 0; 4 > a; a++) {fc[a] = 0, reloadCD[a] = 1};
         Jb = 0;
         v.j();
         ne.j();
@@ -642,209 +631,218 @@ function y(a, b) {
 var ye = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.*|,[]".split("");
 
 //new saving code
-function se(a) {
-    if (fs.existsSync("./SRCRmodSaves")) {} else {
-        fs.mkdir("./SRCRmodSaves", () => {})
-    };
-    var mainSaveString = "",
-        b, c,
-        invValS = 0,
-        compo1ValS = 0,
-        compo2ValS = 0,
-        otherValS = 0,
-        statValS = 0,
-        moneyS = 0,
-        expS = 0,
-        ivS = 0,
-        c1vS = 0,
-        c2vS = 0,
-        osvS = 0,
-        exspS = 0,
-        stS = 0;
+function se(a)
+{
+  if (fs.existsSync("./SRCRmodSaves")){} else {fs.mkdir("./SRCRmodSaves", () => {})};
+var mainSaveString = "", b, c,
+invValS = 0,
+compo1ValS = 0,
+compo2ValS = 0,
+otherValS = 0,
+statValS = 0,
+moneyS = 0,
+expS = 0,
+ivS = 0,
+c1vS = 0,
+c2vS = 0,
+osvS = 0,
+exspS = 0,
+stS = 0;
 
 
-    for (var i = 0; i < 41; i++) invValS += (q[i]);
-    for (var i = 0; i < 41; i++) compo1ValS += (Dc[i]);
-    for (var i = 0; i < 41; i++) compo2ValS += (Ec[i]);
-    for (var i = 0; i < 4; i++) exspS += (ac[i]);
-    for (var i = 0; i < 4; i++) statValS += (gc[i]), statValS += (lc[i]), statValS += (mc[i]), statValS += (nc[i]);
+for (var i = 0; i < 41; i++) invValS += (q[i]);
+for (var i = 0; i < 41; i++) compo1ValS += (Dc[i]);
+for (var i = 0; i < 41; i++) compo2ValS += (Ec[i]);
+for (var i = 0; i < 4; i++) exspS += (ac[i]);
+for (var i = 0; i < 4; i++) statValS += (gc[i]), statValS += (lc[i]), statValS += (mc[i]), statValS += (nc[i]);
 
-    otherValS = z(dc + cc + exspS);
+otherValS = z(dc + cc + exspS);
 
-    moneyS = btoa(dc);
-    expS = btoa(cc);
-    ivS = btoa(invValS);
-    c1vS = btoa(compo1ValS);
-    c2vS = btoa(compo2ValS);
-    osvS = btoa(otherValS);
-    stS = btoa(statValS);
+moneyS = btoa(dc);
+expS = btoa(cc);
+ivS = btoa(invValS);
+c1vS = btoa(compo1ValS);
+c2vS = btoa(compo2ValS);
+osvS = btoa(otherValS);
+stS = btoa(statValS);
 
-    mainSaveString += JSON.stringify(ec); //classes
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(p); //Current Health
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(gc); //points in LP
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(hc); //points in STR
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(ic); //points in DEX
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(jc); //points in MAG
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(q); //inventory slots
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(Dc); //1st compo
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(Ec); //2nd compo
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(uc); //stickmen on/off
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(vc); //move of dying
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(wc); //damage effect
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(xc); //lp bar
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(yc); //PL symbol
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(zc); //drag deadbody
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(Ae); //stage status
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(moneyS); //money
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(expS); //exp
+        mainSaveString += JSON.stringify(ec); //classes
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(p); //Current Health
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(gc); //points in LP
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(hc); //points in STR
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(ic); //points in DEX
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(jc); //points in MAG
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(q); //inventory slots
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(Dc); //1st compo
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(Ec); //2nd compo
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(uc); //stickmen on/off
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(vc); //move of dying
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(wc); //damage effect
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(xc); //lp bar
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(yc); //PL symbol
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(zc); //drag deadbody
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(Ae); //stage status
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(moneyS); //money
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(expS); //exp
 
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(ivS);
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(c1vS);
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(c2vS);
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(ac);
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(Mb);
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(osvS);
-    mainSaveString += "|";
-    mainSaveString += JSON.stringify(stS);
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(ivS);
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(c1vS);
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(c2vS);
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(ac);
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(Mb);
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(osvS);
+        mainSaveString += "|";
+        mainSaveString += JSON.stringify(stS);
 
 
-    if (f != 0) {
-        fs.writeFile("./SRCRmodSaves/" + saveName + ".txt", mainSaveString, function(err) {
-            if (err) {
-                return console.log(err);
-            }
-            console.log("saved")
-        })
+if (f != 0)
+{
+  fs.writeFile("./SRCRmodSaves/" + saveName + ".txt", mainSaveString, function (err)
+  {
+    if(err)
+    {
+      return console.log(err);
     }
+    console.log("saved")
+  })
+}
 
 
 }
 
 var mainLoadString;
-
-function getLoadCode(a) {
-    if (fs.existsSync("./SRCRmodSaves/" + saveName + ".txt", "utf-8"))
-        mainLoadString = fs.readFileSync("./SRCRmodSaves/" + saveName + ".txt", "utf-8");
+function getLoadCode (a)
+{
+  if (fs.existsSync("./SRCRmodSaves/" + saveName + ".txt", "utf-8"))
+mainLoadString = fs.readFileSync("./SRCRmodSaves/" + saveName + ".txt", "utf-8");
 }
 
 
 //new load code
-function re(a, b) {
-    saveName = a;
-    getLoadCode()
-    if (mainLoadString != "BlankSaveFile" && mainLoadString != null) {
-        var loadDecode,
-            invVal = 0,
-            invValL = 0,
-            compo1Val = 0,
-            compo1ValL = 0,
-            compo2Val = 0,
-            compo2ValL = 0,
-            otherVal = 0,
-            otherValL = 0,
-            otherValComp = 0,
-            statVal = 0,
-            statVal2 = 0,
-            statValL = 0,
-            moneyL = 0,
-            expL = 0,
-            ivL = 0,
-            c1vL = 0,
-            c2vL = 0,
-            osvL = 0,
-            exspL = 0,
-            statCheck2 = 0;
+function re(a, b)
+{
+  saveName = a;
+  getLoadCode()
+  if (mainLoadString != "BlankSaveFile" && mainLoadString != null)
+  {
+    var loadDecode,
+    invVal = 0,
+    invValL = 0,
+    compo1Val = 0,
+    compo1ValL = 0,
+    compo2Val = 0,
+    compo2ValL = 0,
+    otherVal = 0,
+    otherValL = 0,
+    otherValComp = 0,
+    statVal = 0,
+    statVal2 = 0,
+    statValL = 0,
+    moneyL = 0,
+    expL = 0,
+    ivL = 0,
+    c1vL = 0,
+    c2vL = 0,
+    osvL = 0,
+    exspL = 0,
+    statCheck2 = 0;
 
-        loadDecode = mainLoadString.split("|");
-        ec = JSON.parse(loadDecode[0]); //classes
-        p = JSON.parse(loadDecode[1]); //current health
-        gc = JSON.parse(loadDecode[2]); //points in LP
-        hc = JSON.parse(loadDecode[3]); //points in STR
-        ic = JSON.parse(loadDecode[4]); //points in DEX
-        jc = JSON.parse(loadDecode[5]); //points in MAG
+    loadDecode = mainLoadString.split("|");
+    ec = JSON.parse(loadDecode[0]); //classes
+    p = JSON.parse(loadDecode[1]); //current health
+    gc = JSON.parse(loadDecode[2]); //points in LP
+    hc = JSON.parse(loadDecode[3]); //points in STR
+    ic = JSON.parse(loadDecode[4]); //points in DEX
+    jc = JSON.parse(loadDecode[5]); //points in MAG
 
-        q = JSON.parse(loadDecode[6]); //inventory slots
-        Dc = JSON.parse(loadDecode[7]); //1st compo
-        Ec = JSON.parse(loadDecode[8]); //2nd compo
+    q = JSON.parse(loadDecode[6]); //inventory slots
+    Dc = JSON.parse(loadDecode[7]); //1st compo
+    Ec = JSON.parse(loadDecode[8]); //2nd compo
 
-        uc = JSON.parse(loadDecode[9]); //stickmen on/off
-        vc = JSON.parse(loadDecode[10]); //move of dying
-        wc = JSON.parse(loadDecode[11]); //damage effect
-        xc = JSON.parse(loadDecode[12]); //lp bar
-        yc = JSON.parse(loadDecode[13]); //PL symbol
-        zc = JSON.parse(loadDecode[14]); //drag deadbody
+    uc = JSON.parse(loadDecode[9]); //stickmen on/off
+    vc = JSON.parse(loadDecode[10]); //move of dying
+    wc = JSON.parse(loadDecode[11]); //damage effect
+    xc = JSON.parse(loadDecode[12]); //lp bar
+    yc = JSON.parse(loadDecode[13]); //PL symbol
+    zc = JSON.parse(loadDecode[14]); //drag deadbody
 
-        Ae = JSON.parse(loadDecode[15]); //stage status
-        moneyL = JSON.parse(loadDecode[16]); //money
-        expL = JSON.parse(loadDecode[17]); //exp
+    Ae = JSON.parse(loadDecode[15]); //stage status
+    moneyL = JSON.parse(loadDecode[16]); //money
+    expL = JSON.parse(loadDecode[17]); //exp
 
-        ivL = JSON.parse(loadDecode[18]);
-        c1vL = JSON.parse(loadDecode[19]);
-        c2vL = JSON.parse(loadDecode[20]);
+    ivL = JSON.parse(loadDecode[18]);
+    c1vL = JSON.parse(loadDecode[19]);
+    c2vL = JSON.parse(loadDecode[20]);
 
-        ac = JSON.parse(loadDecode[21]); //remaining uninvested sp
-        Mb = JSON.parse(loadDecode[22]); //level
+    ac = JSON.parse(loadDecode[21]); //remaining uninvested sp
+    Mb = JSON.parse(loadDecode[22]); //level
 
-        otherValL = JSON.parse(loadDecode[23]);
-        statValL = JSON.parse(loadDecode[24]);
+    otherValL = JSON.parse(loadDecode[23]);
+    statValL = JSON.parse(loadDecode[24]);
 
 
-        dc = parseInt(atob(moneyL), 10);
-        cc = parseInt(atob(expL), 10);
-        invValL = parseInt(atob(ivL), 10);
-        compo1ValL = parseInt(atob(c1vL), 10);
-        compo2ValL = parseInt(atob(c2vL), 10);
-        otherVal = parseInt(atob(otherValL), 10);
-        statVal = parseInt(atob(statValL), 10);
+    dc = parseInt(atob(moneyL), 10);
+    cc = parseInt(atob(expL), 10);
+    invValL = parseInt(atob(ivL), 10);
+    compo1ValL = parseInt(atob(c1vL), 10);
+    compo2ValL = parseInt(atob(c2vL), 10);
+    otherVal = parseInt(atob(otherValL), 10);
+    statVal = parseInt(atob(statValL), 10);
 
-        statCheck = statVal;
+    statCheck = statVal;
 
-        for (var i = 0; i < 41; i++) invVal += (q[i]);
-        for (var i = 0; i < 41; i++) compo1Val += (Dc[i]);
-        for (var i = 0; i < 41; i++) compo2Val += (Ec[i]);
-        for (var i = 0; i < 4; i++) exspL += (ac[i]);
+    for (var i = 0; i < 41; i++) invVal += (q[i]);
+    for (var i = 0; i < 41; i++) compo1Val += (Dc[i]);
+    for (var i = 0; i < 41; i++) compo2Val += (Ec[i]);
+    for (var i = 0; i < 4; i++) exspL += (ac[i]);
 
-        otherValComp = z(exspL + cc + dc);
+    otherValComp = z(exspL + cc + dc);
 
-        if (invVal != invValL) C = null;
-        if (compo1Val != compo1ValL) C = null;
-        if (compo2Val != compo2ValL) C = null;
-        if (otherValComp != otherVal) C = null;
-    }
+    if (invVal != invValL) C = null;
+    if (compo1Val != compo1ValL) C = null;
+    if (compo2Val != compo2ValL) C = null;
+    if (otherValComp != otherVal) C = null;
+  }
 }
 
 
-function generateNewSave() {
-    if (fs.existsSync("./SRCRmodSaves/" + saveName + ".txt", "utf-8")) {} else {
-        fs.writeFile("./SRCRmodSaves/" + saveName + ".txt", "BlankSaveFile", function(err) {
-            if (err) {
-                return console.log(err);
-            }
-        })
-    }
+function generateNewSave ()
+{
+  if (fs.existsSync("./SRCRmodSaves/" + saveName + ".txt", "utf-8"))
+  {}
+  else
+  {
+  fs.writeFile("./SRCRmodSaves/" + saveName + ".txt", "BlankSaveFile", function (err)
+    {
+      if(err)
+      {
+        return console.log(err);
+      }
+    })
+  }
 }
 
 da.fff = Ee;
@@ -899,7 +897,7 @@ function Le() {
 }
 //Anti-Cheat
 function Ne() {
-    return 0; //disables anti cheat temp
+    return 0;   //disables anti cheat temp
     var a, b, c, d;
     if (0 > Mb[0] || 99 < Mb[0]) C = null;
     if (0 > Mb[1] || 99 < Mb[1]) C = null;
@@ -932,13 +930,15 @@ function Ne() {
                 for (d = Pe[a + 1] - Pe[a], b = 0; b < d; b++) c < B[Pe[a] + b][Qe] && (c = B[Pe[a] + b][Qe]), b += B[Pe[a] + b][Re];
         c + 10 + 2 < Mb[0] && (C = null)
     }*/
-    if (0 == ga || 2 == ga) {
-        for (a = 0; a < Ae.length; a++) {
-            var de3 = De[a][3],
-                de4 = De[a][4];
-            if (Ae[a] > 2 && (De[a][3] != 0 || De[a][4] != 0)) {
-                if (Ae[de3] == 0) Ae[de3] = 1;
-                if (Ae[de4] == 0) Ae[de4] = 1;
+    if (0 == ga || 2 == ga)
+    {
+        for (a = 0; a < Ae.length; a++)
+        {
+          var de3 = De[a][3], de4 = De[a][4];
+            if (Ae[a] > 2 && (De[a][3] != 0 || De[a][4] != 0))
+            {
+              if (Ae[de3] == 0) Ae[de3] = 1;
+              if (Ae[de4] == 0) Ae[de4] = 1;
             }
         }
     }
@@ -1339,7 +1339,7 @@ function vf() {
         }
     } else if (11 == f) Tf(0), Jf(0), r = 30, a = "", 0 == nb ? (r = 110, a = Uf[h]) : nb + 1 == Me[h].length && (r = 110, a = "BOSS AREA"), Vf(255 - z(255 * (30 > mb ? mb : 30) / 30)), 110 == r && (b = 255, 30 > mb ? b = z(255 * mb / 30) : 80 < mb && (b = 255 - z(255 * (mb - 80) / 30)), Gf(D, 256, 128, a, 255, 255, 255, b, 64, 64, 64, b, 16, 24), c = -1024 + z(512 * mb / 30), L(c, 112, c + 1024, 112, 8421504), c = 512 - z(512 * mb / 30), L(c, 141, c + 1024, 141, 8421504)), mb++,
         mb == r && (mb = 0, f++);
-    //when in a normal stage aka not a town,  changes hover text for button
+        //when in a normal stage aka not a town,  changes hover text for button
     else if (12 == f) Tf(0), Jf(0), 0 == p[0] + p[1] + p[2] + p[3] ? (mb = 0, f = 30) : 0 != sb ? f++ : Wf(364, 4, 56, 20) ? (Ef ? f = 20 : Ze[32] && (f = 20), D.b(368, 8, "Option", 16711680, 0)) : Ze[32] ? f = 20 : Wf(428, 4, 80, 20) && (Ef && (f = 6), D.b(432, 8, "World Map", 16711680, 0));
     else if (13 == f) Tf(0), Jf(0), Vf(z(255 * mb / 30)), mb++, 30 == mb && (1 == sb ? (sb = 0, nb++, mb = 0, f = 10) : 2 == sb && (mb = nb = sb = 0, Ne(), Ae[h] |= Be, 0 < De[h][3] && (Ae[De[h][3]] |= Ce), 0 < De[h][4] && (Ae[De[h][4]] |= Ce), te(), f = 6, -1 == De[h][3] && (f = 40)), he = se(0), fe = 1);
     else if (20 == f) {
@@ -1486,8 +1486,8 @@ function wf() {
             D.b(c + 8, d + 92, "AT " + F + "-" + H, 16777215, 0);
             6 == a ? D.b(c + 8, d + 104, "$$ " + n, 16777215, 0) : (5 == a ? D.b(c + 8, d + 104, "PC " + n, 16777215, 0) : D.b(c + 8, d + 104, "MP " + n, 16777215, 0));
             2 == r ? D.b(c + 8, d + 116, "SLOW " + m + "%", 16777215, 0) :
-                4 == r ? D.b(c + 8, d + 116, "TIME " + m / 50 + "s", 16777215, 0) :
-                5 == r && D.b(c + 8, d + 116, "TIME " + m / 50 + "s", 16777215, 0);
+            4 == r ? D.b(c + 8, d + 116, "TIME " + m / 50 + "s", 16777215, 0) :
+            5 == r && D.b(c + 8, d + 116, "TIME " + m / 50 + "s", 16777215, 0);
         }
         for (a = 0; 9 > a; a++) r = (3 * wb + a) % Lc[e][vb].length, 0 == h && g <= r || (dg = 2,
             eg(Ua, c + 120 + a % 3 * 28, d + 24 + 28 * z(a / 3), 24, 24, 24 * w(Lc[e][vb][r], Qc), 0, 24, 24, w(Lc[e][vb][r], Sc)), dg = 0, u[Lc[e][vb][r]][Nc] && hf.b(c + 120 + a % 3 * 28 + 19, d + 24 + 28 * z(a / 3) + 17, "" + u[Lc[e][vb][r]][Nc], 16777215, -1));
@@ -1536,70 +1536,72 @@ function wf() {
         Wf(c + 120 + 1, d + 136, 114, 24) && (Ef && (Jb = 0, f = 52), V(c + 120 + 1, d + 136, 114, 24, 10027008));
         yf(D, c + 176, d + 148, "EXIT", 16777215, 0);
         Jf(1)
-    } else if (54 == f) {
-        Tf(0);
-        sb = 0;
-        k = 10;
-        c = 80;
-        d = 28;
-        Xf = 1;
-        70 == h ? V(c - 4, d - 4, 328, 168, 3422552064) : V(c - 4, d - 4, 328, 168, 2147483648);
-        Xf = 0;
-        bg(c + 0, d + 0, 321, 161, 16777215);
-        L(c + 160, d + 0, c + 160, d + 160, 16777215);
-        e = "WORLD MAP " + (100 > vb ? " " : ""); //text at the top of the book
-        e += "" + z(vb / k + 1) + "/" + z((jg.length - 1) / k + 1);
-        D.b(c + 20, d + 4, e, -1, 32768);
-        Wf(c + 8, d + 16, 144, 12 * k) && (a = z((fg - (d + 16)) / 12), Ef && (wb = a), V(c + 8, d + 16 + 12 * a, 144, 12, 10027008));
-        for (a = 0; a < k; a++) e = jg[vb + a], 0 != e && (0 < (Ae[e] & Be) ? D.b(c + 8, d + 16 + 12 * a, Uf[e], 16777215, 0) : D.b(c + 8, d + 16 + 12 * a, "???", 16777215, 0));
-        e = jg[vb + wb]; //e = currently selected stage in book (id)
-        0 != e && (0 < (Ae[e] & Be) ? D.b(c + 8, d + 16 + 12 * wb, Uf[e], 16711680, 0) : D.b(c + 8, d + 16 + 12 * wb, "???", 16711680, 0));
-        L(c + 0, d + 140, c + 160, d + 140, 16777215);
-        Wf(c + 8, d + 144 - 2, 48, 17) && (Ef && (vb = Zf(z(vb / k) - 1, 0, z((jg.length - 1) / k)) * k), V(c + 8, d + 144 - 2, 48, 17, 10027008));
-        D.b(c + 16, d + 144 + 1, "Prev", 16777215, 0);
-        Wf(c + 56, d + 144 - 2, 48, 17) && (Ef && (vb = Zf(z(vb / k) + 1, 0, z((jg.length - 1) / k)) * k), V(c + 56, d + 144 - 2, 48, 17, 10027008));
-        D.b(c + 64, d + 144 + 1, "Next", 16777215, 0);
-        Wf(c + 104, d + 144 - 2, 48, 17) && (Ef && (f = 52), V(c + 104, d + 144 - 2, 48, 17, 10027008));
-        D.b(c + 112, d + 144 + 1, "EXIT", 16777215, 0);
-        if (0 != e)
-            if (0 < (Ae[e] & kg)) {
-                var enNum = XX[e];
-                g = c + 80 - 16 * enNum;
-                Wf(g + 160, d + 0, 32 * enNum, 52) && (b = z((cg - (g + 160)) / 32), Ef && (xb = b), V(g + 160 + 32 * b + 2, d + 0 + 2, 28, 52, 10027008));
-                V(g + 160 + 32 * xb + 2, d + 48 + 2, 28, 4, 10027008);
-                xb = K(xb, 0, enNum - 1);
-                for (a = 0; a < enNum; a++) ag(Pa[Me[e][Me[e].length - 1][0]], g + 164 + 32 * a, d + 44, 24, 8, 0, 0, 24, 8);
-                k = Pee[e][a + 1];
-                for (b = a = 0; a < enNum; a++, b++) G.M(Pee[e][a], g + 164 + 12 + 32 * b, d + 44 - 1, 0);
-                //checks for opening street to avoid issues with id 0
-                var eid = 0,
-                    YY = 0;
-                for (a = 0; a < enNum; a++)
-                    e == 1 ? eid = Pee[e][e + xb - 1] : eid = Pee[e][YY + xb];
+    }
+    else if (54 == f)
+{
+    Tf(0);
+    sb = 0;
+    k = 10;
+    c = 80;
+    d = 28;
+    Xf = 1;
+    70 == h ? V(c - 4, d - 4, 328, 168, 3422552064) : V(c - 4, d - 4, 328, 168, 2147483648);
+    Xf = 0;
+    bg(c + 0, d + 0, 321, 161, 16777215);
+    L(c + 160, d + 0, c + 160, d + 160, 16777215);
+    e = "WORLD MAP " + (100 > vb ? " " : ""); //text at the top of the book
+    e += "" + z(vb / k + 1) + "/" + z((jg.length - 1) / k + 1);
+    D.b(c + 20, d + 4, e, -1, 32768);
+    Wf(c + 8, d + 16, 144, 12 * k) && (a = z((fg - (d + 16)) / 12), Ef && (wb = a), V(c + 8, d + 16 + 12 * a, 144, 12, 10027008));
+    for (a = 0; a < k; a++) e = jg[vb + a], 0 != e && (0 < (Ae[e] & Be) ? D.b(c + 8, d + 16 + 12 * a, Uf[e], 16777215, 0) : D.b(c + 8, d + 16 + 12 * a, "???", 16777215, 0));
+    e = jg[vb + wb]; //e = currently selected stage in book (id)
+    0 != e && (0 < (Ae[e] & Be) ? D.b(c + 8, d + 16 + 12 * wb, Uf[e], 16711680, 0) : D.b(c + 8, d + 16 + 12 * wb, "???", 16711680, 0));
+    L(c + 0, d + 140, c + 160, d + 140, 16777215);
+    Wf(c + 8, d + 144 - 2, 48, 17) && (Ef && (vb = Zf(z(vb / k) - 1, 0, z((jg.length - 1) / k)) * k), V(c + 8, d + 144 - 2, 48, 17, 10027008));
+    D.b(c + 16, d + 144 + 1, "Prev", 16777215, 0);
+    Wf(c + 56, d + 144 - 2, 48, 17) && (Ef && (vb = Zf(z(vb / k) + 1, 0, z((jg.length - 1) / k)) * k), V(c + 56, d + 144 - 2, 48, 17, 10027008));
+    D.b(c + 64, d + 144 + 1, "Next", 16777215, 0);
+    Wf(c + 104, d + 144 - 2, 48, 17) && (Ef && (f = 52), V(c + 104, d + 144 - 2, 48, 17, 10027008));
+    D.b(c + 112, d + 144 + 1, "EXIT", 16777215, 0);
+    if (0 != e)
+        if (0 < (Ae[e] & kg))
+        {
+            var enNum = XX[e];
+            g = c + 80 - 16 * enNum;
+            Wf(g + 160, d + 0, 32 * enNum, 52) && (b = z((cg - (g + 160)) / 32), Ef && (xb = b), V(g + 160 + 32 * b + 2, d + 0 + 2, 28, 52, 10027008));
+            V(g + 160 + 32 * xb + 2, d + 48 + 2, 28, 4, 10027008);
+            xb = K(xb, 0, enNum - 1);
+            for (a = 0; a < enNum; a++) ag(Pa[Me[e][Me[e].length - 1][0]], g + 164 + 32 * a, d + 44, 24, 8, 0, 0, 24, 8);
+            k = Pee[e][a + 1];
+            for (b = a = 0; a < enNum; a++, b++) G.M(Pee[e][a], g + 164 + 12 + 32 * b, d + 44 - 1, 0);
+            //checks for opening street to avoid issues with id 0
+            var eid = 0, YY = 0;
+            for (a = 0; a < enNum; a++)
+            e == 1 ? eid = Pee[e][e + xb - 1] : eid = Pee[e][YY + xb];
 
-                D.b(c + 164, d + 56, "Lv   " + B[eid][Qe], 16777215, 0);
-                D.b(c + 164, d + 68, "LP   " + B[eid][lg], 16777215, 0);
-                D.b(c + 164, d + 80, "GOLD " + B[eid][mg], 16777215, 0);
-                D.b(c + 164, d + 92, "EXP  " + B[eid][ng], 16777215, 0);
-                D.b(c + 164, d + 108, "Drop Item", 16777215, 0);
-                for (b = a = 0; 6 > a; a += 2) k = B[eid][og + a], 0 != k && (dg = 2, eg(Ra, c + 164, d + 4 * (30 + 3 * b), 12, 12, 12 * w(k, Pc), 0, 12, 12, w(k, Sc)), dg = 0, hg(c + 164, d + 4 * (30 + 3 * b), "  " + u[k][Mc] + " " + (u[k][Nc] ? u[k][Nc] : ""), 16777215, 0, -1), b++);
-                D.b(c + 256, d + 56, "strong", 16777215, 0);
-                0 < B[eid][pg] && hf.b(c + 256, d + 68 + 2, "Ph          ", 8421504, 0);
-                0 < B[eid][qg] && hf.b(c + 256, d + 68 + 2, "  Fi        ", 16711680, 0);
-                0 < B[eid][rg] && hf.b(c + 256, d + 68 + 2, "    Ic      ", 2105599, 0);
-                0 < B[eid][sg] && hf.b(c + 256, d + 68 + 2, "      Th    ", 16777024, 0);
-                0 < B[eid][tg] && hf.b(c + 256, d + 68 + 2, "        Po  ", 65280, 0);
-                0 < B[eid][ug] && hf.b(c + 256, d + 68 + 2, "          Fr", 12632319, 0);
-                D.b(c + 256, d + 80, "weak", 16777215, 0);
-                0 > B[eid][pg] && hf.b(c + 256, d + 92 + 2, "Ph          ", 8421504, 0);
-                0 > B[eid][qg] && hf.b(c + 256, d + 92 + 2, "  Fi        ", 16711680, 0);
-                0 > B[eid][rg] && hf.b(c + 256, d + 92 + 2, "    Ic      ", 2105599, 0);
-                0 > B[eid][sg] && hf.b(c + 256, d + 92 + 2, "      Th    ", 16777024, 0);
-                0 > B[eid][tg] && hf.b(c + 256, d + 92 + 2, "        Po  ", 65280, 0);
-                0 > B[eid][ug] && hf.b(c + 256, d + 92 + 2, "          Fr", 12632319, 0)
-            }
+            D.b(c + 164, d + 56, "Lv   " + B[eid][Qe], 16777215, 0);
+            D.b(c + 164, d + 68, "LP   " + B[eid][lg], 16777215, 0);
+            D.b(c + 164, d + 80, "GOLD " + B[eid][mg], 16777215, 0);
+            D.b(c + 164, d + 92, "EXP  " + B[eid][ng], 16777215, 0);
+            D.b(c + 164, d + 108, "Drop Item", 16777215, 0);
+            for (b = a = 0; 6 > a; a += 2) k = B[eid][og + a], 0 != k && (dg = 2, eg(Ra, c + 164, d + 4 * (30 + 3 * b), 12, 12, 12 * w(k, Pc), 0, 12, 12, w(k, Sc)), dg = 0, hg(c + 164, d + 4 * (30 + 3 * b), "  " + u[k][Mc] + " " + (u[k][Nc] ? u[k][Nc] : ""), 16777215, 0, -1), b++);
+            D.b(c + 256, d + 56, "strong", 16777215, 0);
+            0 < B[eid][pg] && hf.b(c + 256, d + 68 + 2, "Ph          ", 8421504, 0);
+            0 < B[eid][qg] && hf.b(c + 256, d + 68 + 2, "  Fi        ", 16711680, 0);
+            0 < B[eid][rg] && hf.b(c + 256, d + 68 + 2, "    Ic      ", 2105599, 0);
+            0 < B[eid][sg] && hf.b(c + 256, d + 68 + 2, "      Th    ", 16777024, 0);
+            0 < B[eid][tg] && hf.b(c + 256, d + 68 + 2, "        Po  ", 65280, 0);
+            0 < B[eid][ug] && hf.b(c + 256, d + 68 + 2, "          Fr", 12632319, 0);
+            D.b(c + 256, d + 80, "weak", 16777215, 0);
+            0 > B[eid][pg] && hf.b(c + 256, d + 92 + 2, "Ph          ", 8421504, 0);
+            0 > B[eid][qg] && hf.b(c + 256, d + 92 + 2, "  Fi        ", 16711680, 0);
+            0 > B[eid][rg] && hf.b(c + 256, d + 92 + 2, "    Ic      ", 2105599, 0);
+            0 > B[eid][sg] && hf.b(c + 256, d + 92 + 2, "      Th    ", 16777024, 0);
+            0 > B[eid][tg] && hf.b(c + 256, d + 92 + 2, "        Po  ", 65280, 0);
+            0 > B[eid][ug] && hf.b(c + 256, d + 92 + 2, "          Fr", 12632319, 0)
+        }
         else 0 < (Ae[e] & Be) ? (yf(D, c + 240, d + 40, "Information fee", 16777215, 0),
-            g = 1E3 * (vb + wb + 1), Df(c + 240, d + 80, 160, 160) && (g <= dc && Ef && (Ne(), Ae[e] |= kg, dc -= g, te()), Hf(c + 240, d + 80, 120, 32, 10027008)), yf(D, c + 240, d + 80, "" + g + "$ BUY", 16777215, 0)) : (yf(D, c + 240, d + 40, "?????", 16777215, 0), yf(D, c + 240, d + 80, "???", 16777215, 0));
+                g = 1E3 * (vb + wb + 1), Df(c + 240, d + 80, 160, 160) && (g <= dc && Ef && (Ne(), Ae[e] |= kg, dc -= g, te()), Hf(c + 240, d + 80, 120, 32, 10027008)), yf(D, c + 240, d + 80, "" + g + "$ BUY", 16777215, 0)) : (yf(D, c + 240, d + 40, "?????", 16777215, 0), yf(D, c + 240, d + 80, "???", 16777215, 0));
         Jf(1)
     } else if (55 == f) {
         Tf(0);
@@ -1741,7 +1743,7 @@ function Tf(a) {
         e, g, k;
     k = C;
     switch (d.w) {
-        case 15: //Mist
+        case 15:    //Mist
         case 16:
         case 30:
         case 31:
@@ -1764,7 +1766,7 @@ function Tf(a) {
             for (b = 64 * ea; b < e; b++) d = Ma.f[b] & 255, c = C[b] >> 16 & 255, k = ((255 - c) * d >> 8) + c, c = C[b] >> 8 & 255, g = ((255 - c) * d >> 8) + c, c = C[b] & 255, c = ((255 - c) * d >> 8) + c, C[b] = k << 16 | g << 8 | c;
             Xf = dg = 0;
             break;
-        case 17: //Darkness
+        case 17:    //Darkness
         case 18:
         case 19:
         case 48:
@@ -1788,7 +1790,7 @@ function Tf(a) {
             for (b = 0; b < e; b++) d = Ma.f[b], 255 == d ? C[b] = 251658240 : (c = C[b] >> 16 & 255, k = (-c * d >> 8) + c, c = C[b] >> 8 & 255, g = (-c * d >> 8) + c, c = C[b] & 255, c = (-c * d >> 8) + c, C[b] = k << 16 | g << 8 | c);
             Xf = dg = 0;
             break;
-        case 34: //Heat Wave
+        case 34:    //Heat Wave
         case 35:
         case 36:
         case 37:
@@ -1808,7 +1810,7 @@ function Tf(a) {
             for (c = 0; c < e; c++)
                 C[c] = Ma.f[c];
             break;
-        case 51: //Snow
+        case 51:    //Snow
         case 52:
         case 56:
         case 57:
@@ -1820,7 +1822,7 @@ function Tf(a) {
             57 == d.w ? e = 2 : 58 == d.w ? e = 2 : 59 == d.w ? e = 2 : 60 == d.w ? e = 3 : 61 == d.w && (e = 3);
             for (b = 0; b < e; b++) Ma.f[z(A(24576))] = 1;
             for (b = 224 * ea - 1; 0 <= b; b--)
-                1 == Ma.f[b] && ((g = I.e[b >> 12][(b & 511) >> 3], -1 == g || 0 == g && 3 > (b & 7) && 3 > (b >> 9 & 7) || 2 == g && 4 < (b & 7) && 3 > (b >> 9 & 7)) ? !(50 > A(100)) && (c = 57 == d.w || 58 == d.w || 61 == d.w ? b + ea + z(A(4)) - 2 : b + ea + z(A(3)) - 1, 1 != Ma.f[c] && (g = I.e[c >> 12][(c & 511) >> 3], -1 == g || 0 == g && 3 > (c & 7) && 3 > (c >> 9 & 7) || 2 == g && 4 < (c & 7) && 3 > (c >> 9 & 7))) && (Ma.f[c] = Ma.f[b], Ma.f[b] = 0) : Ma.f[b] = 0);
+            1 == Ma.f[b] && ((g = I.e[b >> 12][(b & 511) >> 3], -1 == g || 0 == g && 3 > (b & 7) && 3 > (b >> 9 & 7) || 2 == g && 4 < (b & 7) && 3 > (b >> 9 & 7)) ? !(50 > A(100)) && (c = 57 == d.w || 58 == d.w || 61 == d.w ? b + ea + z(A(4)) - 2 : b + ea + z(A(3)) - 1, 1 != Ma.f[c] && (g = I.e[c >> 12][(c & 511) >> 3], -1 == g || 0 == g && 3 > (c & 7) && 3 > (c >> 9 & 7) || 2 == g && 4 < (c & 7) && 3 > (c >> 9 & 7))) && (Ma.f[c] = Ma.f[b], Ma.f[b] = 0) : Ma.f[b] = 0);
             C = Ma.f;
             for (b = 0; 4 > b; b++) 0 != p[b] && (Hf(v.a[b][0].x, v.a[b][0].y, 3, 3, 0), Hf(v.a[b][9].x, v.a[b][9].y, 1, 1, 0), Hf(v.a[b][10].x, v.a[b][10].y, 1, 1, 0));
             for (b = 0; b < oe.index; b++)
@@ -1878,20 +1880,20 @@ function Cf() {
             k = w(q[s + a], Yc);
         //kc = max LP, lc = STR, mc = DEX, nc = MAG, oc = min AT, pc = max AT, qc = min AGI, rc = max AGI, tc = range
         1 == ec[a] ? (oc[a] = b + BoxerWhipperSTR(lc[a]), pc[a] = d + BoxerWhipperSTR(lc[a]), qc[a] = e < ig(e - mc[a], 5) ? e : ig(e - mc[a], 5), rc[a] = g < ig(g - mc[a], 10) ? g : ig(g - mc[a], 10), tc[a] = k, kc[a] = 50 + 10 * gc[a] + 4 * lc[a] + 3 * mc[a] + 2 * nc[a]) :
-            2 == ec[a] ? (pc[a] = d + GladiatorDSStatAT(lc[a], mc[a], 1), oc[a] = b + GladiatorDSStatAT(lc[a], mc[a], 0) < pc[a] ? b + GladiatorDSStatAT(lc[a], mc[a], 0) : pc[a], qc[a] = e, rc[a] = g, tc[a] = k, x(s + a, Hd) && (tc[a] += y(s + a, t)), x(s + a, ae) && (tc[a] += y(s + a, id)), kc[a] = 50 + 10 * gc[a] + 4 * lc[a] + 4 * mc[a] + 2 * nc[a]) :
-            3 == ec[a] ? (oc[a] = b + SniperAngleDEX(mc[a], 0), pc[a] = d + SniperAngleDEX(mc[a], 1), qc[a] = e, rc[a] = g, tc[a] = k + 2 * lc[a], x(s + a, Id) && (tc[a] += y(s + a, t)), kc[a] = 50 + 8 * gc[a] + 2 * lc[a] + 3 * mc[a] + 2 * nc[a]) :
-            4 == ec[a] ? (oc[a] = b + z(nc[a] / 4), pc[a] = d + z(nc[a] / 3), qc[a] = ig(e - mc[a], 50), rc[a] = ig(g - mc[a], 60), tc[a] = k + 2 * lc[a], x(s + a, Id) && (tc[a] += y(s + a, t)), kc[a] = 50 + 8 * gc[a] + 2 * lc[a] + 2 * mc[a] + 2 * nc[a]) :
-            5 == ec[a] ? (oc[a] = b, pc[a] = d, qc[a] = e < ig(e - mc[a], 50) ? e : ig(e - mc[a], 50), rc[a] = g < ig(g - mc[a], 60) ? g : ig(g - mc[a], 60), tc[a] = k + 2 * nc[a], x(s + a, Id) && (tc[a] += y(s + a, t)), kc[a] = 50 + 8 * gc[a] + 2 * lc[a] + 2 * mc[a] + 2 * nc[a]) :
-            //old gunner AT+ stuff: oc[a] = b + z(b * lc[a] / 50), pc[a] = d + z(d * lc[a] / 50)
-            6 == ec[a] ? (oc[a] = b, pc[a] = d, qc[a] = ig(z(50 * e / (lc[a] + 50)), 5), rc[a] = ig(z(50 * g / (lc[a] + 50)), 10), tc[a] = k, x(s + a, Id) && (tc[a] += y(s + a, t)), kc[a] = 50 + 8 * gc[a] + 2 * lc[a] + 2 * mc[a] + 2 * nc[a]) :
-            7 == ec[a] ? (oc[a] = b + BoxerWhipperSTR(lc[a]), pc[a] = d + BoxerWhipperSTR(lc[a]), qc[a] = e, rc[a] = g, tc[a] = k, kc[a] = 50 + 10 * gc[a] + 3 * lc[a] + 3 * mc[a] + 2 * nc[a]) :
-            8 == ec[a] && (oc[a] = b + SniperAngleDEX(lc[a], 0), pc[a] = d + SniperAngleDEX(lc[a], 1), qc[a] = e, rc[a] = g, tc[a] = k, x(s + a, Id) && (tc[a] += y(s + a, t)), kc[a] = 50 + 10 * gc[a] + 4 * lc[a] + 2 * mc[a] + 2 * nc[a]);
+        2 == ec[a] ? (pc[a] = d + GladiatorDSStatAT(lc[a], mc[a], 1), oc[a] = b + GladiatorDSStatAT(lc[a], mc[a], 0) < pc[a] ? b + GladiatorDSStatAT(lc[a], mc[a], 0) : pc[a], qc[a] = e, rc[a] = g, tc[a] = k, x(s + a, Hd) && (tc[a] += y(s + a, t)), x(s + a, ae) && (tc[a] += y(s + a, id)), kc[a] = 50 + 10 * gc[a] + 4 * lc[a] + 4 * mc[a] + 2 * nc[a]) :
+        3 == ec[a] ? (oc[a] = b + SniperAngleDEX(mc[a], 0), pc[a] = d + SniperAngleDEX(mc[a], 1), qc[a] = e, rc[a] = g, tc[a] = k + 2 * lc[a], x(s + a, Id) && (tc[a] += y(s + a, t)), kc[a] = 50 + 8 * gc[a] + 2 * lc[a] + 3 * mc[a] + 2 * nc[a]) :
+        4 == ec[a] ? (oc[a] = b + z(nc[a] / 4), pc[a] = d + z(nc[a] / 3), qc[a] = ig(e - mc[a], 50), rc[a] = ig(g - mc[a], 60), tc[a] = k + 2 * lc[a], x(s + a, Id) && (tc[a] += y(s + a, t)), kc[a] = 50 + 8 * gc[a] + 2 * lc[a] + 2 * mc[a] + 2 * nc[a]) :
+        5 == ec[a] ? (oc[a] = b, pc[a] = d, qc[a] = e < ig(e - mc[a], 50) ? e : ig(e - mc[a], 50), rc[a] = g < ig(g - mc[a], 60) ? g : ig(g - mc[a], 60), tc[a] = k + 2 * nc[a], x(s + a, Id) && (tc[a] += y(s + a, t)), kc[a] = 50 + 8 * gc[a] + 2 * lc[a] + 2 * mc[a] + 2 * nc[a]) :
+        //old gunner AT+ stuff: oc[a] = b + z(b * lc[a] / 50), pc[a] = d + z(d * lc[a] / 50)
+        6 == ec[a] ? (oc[a] = b, pc[a] = d, qc[a] = ig(z(50 * e / (lc[a] + 50)), 5), rc[a] = ig(z(50 * g / (lc[a] + 50)), 10), tc[a] = k, x(s + a, Id) && (tc[a] += y(s + a, t)), kc[a] = 50 + 8 * gc[a] + 2 * lc[a] + 2 * mc[a] + 2 * nc[a]) :
+        7 == ec[a] ? (oc[a] = b + BoxerWhipperSTR(lc[a]), pc[a] = d + BoxerWhipperSTR(lc[a]), qc[a] = e, rc[a] = g, tc[a] = k, kc[a] = 50 + 10 * gc[a] + 3 * lc[a] + 3 * mc[a] + 2 * nc[a]) :
+        8 == ec[a] && (oc[a] = b + SniperAngleDEX(lc[a], 0), pc[a] = d + SniperAngleDEX(lc[a], 1), qc[a] = e, rc[a] = g, tc[a] = k, x(s + a, Id) && (tc[a] += y(s + a, t)), kc[a] = 50 + 10 * gc[a] + 4 * lc[a] + 2 * mc[a] + 2 * nc[a]);
         x(s + a, ld) && (kc[a] += y(s + a, t));
         x(s + a, Pd) && (kc[a] += z(y(s + a, t) * kc[a] / 100));
         x(s + a, ce) && (kc[a] += y(s + a, id));
         1 == w(q[s + a], Rc) || 2 == w(q[s + a], Rc) || 3 == w(q[s + a], Rc) || 7 == w(q[s + a], Rc) || 8 == w(q[s + a], Rc) ? (x(s + a, qd) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id)), x(s + a, rd) && (oc[a] += z(y(s + a, t) * oc[a] / 100), pc[a] += z(y(s + a, t) * pc[a] / 100)), x(s + a, ae) && (oc[a] += z(y(s + a, t) * oc[a] / 100), pc[a] += z(y(s + a, t) * pc[a] / 100))) :
-            4 == w(q[s + a], Rc) || 5 == w(q[s + a], Rc) ? (x(s + a, yd) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id)), x(s + a, Ad) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id)), x(s + a, Cd) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id)), x(s + a, Dd) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id))) :
-            6 == w(q[s + a], Rc) && (x(s + a, qd) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id)), x(s + a, rd) && (oc[a] += z(y(s + a, t) * oc[a] / 100), pc[a] += z(y(s + a, t) * pc[a] / 100)), 0 == w(q[s + a], cd) && (x(s + a, yd) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id)), x(s + a, Ad) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id)), x(s + a, Cd) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id)), x(s + a, Dd) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id))));
+        4 == w(q[s + a], Rc) || 5 == w(q[s + a], Rc) ? (x(s + a, yd) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id)), x(s + a, Ad) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id)), x(s + a, Cd) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id)), x(s + a, Dd) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id))) :
+        6 == w(q[s + a], Rc) && (x(s + a, qd) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id)), x(s + a, rd) && (oc[a] += z(y(s + a, t) * oc[a] / 100), pc[a] += z(y(s + a, t) * pc[a] / 100)), 0 == w(q[s + a], cd) && (x(s + a, yd) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id)), x(s + a, Ad) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id)), x(s + a, Cd) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id)), x(s + a, Dd) && (oc[a] += y(s + a, t), pc[a] += y(s + a, id))));
         x(s + a, Gd) && (b = y(s + a, t), qc[a] -= z(qc[a] * b / 100), rc[a] -= z(rc[a] * b / 100));
         //Apply Priest Aura / Criticals Card
         oc[a] += z(oc[a] * Ac[a] / 100);
@@ -1918,13 +1920,15 @@ function Jf(a) {
     Lg && 256 <= fg ? ub = !0 : Lg && 256 > fg && (ub = !1);
 
     GameResize();
-    if (stL != 0) {
-        if (staddL == 1) {
-            staddL = 0;
-            for (var i = 0; i < 4; i++) statCheck2 += (gc[i]), statCheck2 += (lc[i]), statCheck2 += (mc[i]), statCheck2 += (nc[i]);
-        }
-        //if (statCheck2 != statCheck) C = null;
-        if (statCheck2 == statCheck) stL = 0;
+    if (stL != 0)
+    {
+      if (staddL == 1)
+      {
+        staddL = 0;
+        for (var i = 0; i < 4; i++) statCheck2 += (gc[i]), statCheck2 += (lc[i]), statCheck2 += (mc[i]), statCheck2 += (nc[i]);
+      }
+      //if (statCheck2 != statCheck) C = null;
+      if (statCheck2 == statCheck) stL = 0;
     };
 
     V(0, 257, 512, 126, [13407305, 9480368, 7241784, 7630870, 11302740, 13599032, 10993609, 6322320, 1921195, 10053120, 6714227, 6313296, 6313296][Me[h][nb][0]]);
@@ -1954,7 +1958,7 @@ function Jf(a) {
         if (v.step[l] != Mg)
             if (D.b(e, g + 28, d, 16777215, 0), D.b(e, g + 40, r, 16777215, 0), D.b(e, g + 52, m, 16777215, 0), hf.b(e, g + 28 + 2, "              AT ", -1, 0), hf.b(e, g + 40 + 2, "              AGI ", -1, 0), hf.b(e, g + 52 + 2, "              RANGE ", -1, 0), hf.b(e, g + 28 + 2, "                 " + oc[l] + "-" + pc[l], 0, -1), hf.b(e, g + 40 + 2, "                  " + qc[l] + "-" + rc[l], 0, -1), hf.b(e, g + 52 + 2, "                    " + tc[l], 0, -1), 5 == ec[l]) hf.b(e, g + 64 + 2, "AURA          AURA", -1, 0), hf.b(e, g + 64 + 2, "     (AT)" + lc[l] + "%", 0, -1), hf.b(e, g + 64 + 2, "                   (DF)" + mc[l] / 5, 0, -1);
             else if (6 == ec[l]) hf.b(e, g + 64 + 2, "RELOAD", -1, 0), hf.b(e, g + 64 + 2, "       " + Number(Math.round((w(q[s + l], 59) / 50) + 'e+2') + 'e-2') + "s", 0, -1), hf.b(e, g + 64 + 2, "              AMMO", -1, 0), hf.b(e, g + 64 + 2, "                   " + fc[l] + "/" + (nc[l] + w(q[s + l], 58)), 0, -1);
-        else if (7 == ec[l]) hf.b(e, g + 64 + 2, "              BULLET", -1, 0), hf.b(e, g + 64 + 2, "                     +" + mc[l] / 5, 0, -1);
+            else if (7 == ec[l]) hf.b(e, g + 64 + 2, "              BULLET", -1, 0), hf.b(e, g + 64 + 2, "                     +" + mc[l] / 5, 0, -1);
         else if (8 == ec[l]) {
             var n = 0,
                 n = 10 > mc[l] ? 0 + (mc[l] - 0) / 10 : 30 > mc[l] ? 1 + (mc[l] - 10) / 20 : 60 > mc[l] ? 2 + (mc[l] - 30) / 30 : 100 > mc[l] ? 3 + (mc[l] - 60) / 40 : 4;
@@ -2003,13 +2007,13 @@ function Jf(a) {
     Gf(hf, e - 15, g + 56 + 12, "COMPO", 0, 0, 0, 0, 0, 0, 0, 128, 5, 7);
     Gf(hf, e - 15, g + 84 + 12, "COMPO", 0, 0, 0, 0, 0, 0, 0, 128, 5, 7);
     for (b = 0; 4 > b; b++) V(e + 32 * b, g - 12, 24, 4, 0),
-        //Draws LP Bar
-        V(e + 32 * b, g - 12, z(24 * p[b] / kc[b]), 4, 10027008),
-        //Setup MP Bar numbers
-        k = ig(w(q[s + b], bd), 1), c = w(q[s + b], Rc), 6 == c && (k = ig(w(q[s + b], 58), 1) + nc[b]),
-        //Draws MP Bar
-        4 != c && 5 != c && V(e + 32 * b, g - 6, z(23 * fc[b] / k) + 1, 2, 128),
-        V(e + 32 * b, g + 0, 24, 24, 0), V(e + 32 * b, g + 28, 24, 24, 0), Ng(b, 0) && V(e + 32 * b, g + 56, 24, 24, 0), Ng(b, 1) && V(e + 32 * b, g + 84, 24, 24, 0), eg(Qa, e + 32 * b, g, 24, 24, 24 * w(q[s + b], Rc), 0, 24, 24, 16777215), Yf(e + 32 * b, g, 24 * w(q[s + b], Rc), w(q[s + b], Sc)), dg = 2, eg(Ua, e + 32 * b, g + 28, 24, 24, 24 * w(q[s + b], Qc), 0, 24, 24, w(q[s + b], Sc)), Ng(b, 0) && eg(Ua, e + 32 * b, g + 56, 24, 24, 24 * w(Dc[s + b], Qc), 0, 24, 24, w(Dc[s + b], Sc)), Ng(b, 1) && eg(Ua, e + 32 * b, g + 84, 24, 24, 24 * w(Ec[s + b], Qc), 0, 24, 24, w(Ec[s + b], Sc)), dg = 0, u[q[s + b]][Nc] && hf.b(e + 32 * b + 19, g + 28 + 17, "" + u[q[s + b]][Nc], 16777215, -1), u[Dc[s + b]][Nc] && Ng(b, 0) && hf.b(e + 32 * b + 19, g + 56 + 17, "" + u[Dc[s + b]][Nc], 16777215, -1), u[Ec[s + b]][Nc] && Ng(b, 1) && hf.b(e + 32 * b + 19, g + 84 + 17, "" + u[Ec[s + b]][Nc], 16777215, -1);
+    //Draws LP Bar
+    V(e + 32 * b, g - 12, z(24 * p[b] / kc[b]), 4, 10027008),
+    //Setup MP Bar numbers
+    k = ig(w(q[s + b], bd), 1), c = w(q[s + b], Rc), 6 == c && (k = ig(w(q[s + b], 58), 1) + nc[b]),
+    //Draws MP Bar
+    4 != c && 5 != c && V(e + 32 * b, g - 6, z(23 * fc[b] / k) + 1, 2, 128),
+    V(e + 32 * b, g + 0, 24, 24, 0), V(e + 32 * b, g + 28, 24, 24, 0), Ng(b, 0) && V(e + 32 * b, g + 56, 24, 24, 0), Ng(b, 1) && V(e + 32 * b, g + 84, 24, 24, 0), eg(Qa, e + 32 * b, g, 24, 24, 24 * w(q[s + b], Rc), 0, 24, 24, 16777215), Yf(e + 32 * b, g, 24 * w(q[s + b], Rc), w(q[s + b], Sc)), dg = 2, eg(Ua, e + 32 * b, g + 28, 24, 24, 24 * w(q[s + b], Qc), 0, 24, 24, w(q[s + b], Sc)), Ng(b, 0) && eg(Ua, e + 32 * b, g + 56, 24, 24, 24 * w(Dc[s + b], Qc), 0, 24, 24, w(Dc[s + b], Sc)), Ng(b, 1) && eg(Ua, e + 32 * b, g + 84, 24, 24, 24 * w(Ec[s + b], Qc), 0, 24, 24, w(Ec[s + b], Sc)), dg = 0, u[q[s + b]][Nc] && hf.b(e + 32 * b + 19, g + 28 + 17, "" + u[q[s + b]][Nc], 16777215, -1), u[Dc[s + b]][Nc] && Ng(b, 0) && hf.b(e + 32 * b + 19, g + 56 + 17, "" + u[Dc[s + b]][Nc], 16777215, -1), u[Ec[s + b]][Nc] && Ng(b, 1) && hf.b(e + 32 * b + 19, g + 84 + 17, "" + u[Ec[s + b]][Nc], 16777215, -1);
     bg(e + 32 * tb - 1, g - 1, 26, 26, 16711680);
     e = 344;
     g = 271;
@@ -2311,10 +2315,10 @@ Pg.prototype.p = function(a, b, c, d) {
     if (8 > a) {
         var Db = w(q[s + a], Rc);
         1 == Db || 2 == Db || 7 == Db ? (ia = w(q[s + a], dd), ja = w(q[s + a], ed), x(s + a, yd) && (ia += y(s + a, t), ja += y(s + a, id)), x(s + a, zd) && (Z += y(s + a, t)), x(s + a, Ad) && (ia += y(s + a, t), ja += y(s + a, id)), x(s + a, Bd) && (pa += y(s + a, t)), x(s + a, Cd) && (ia += y(s + a, t), ja += y(s + a, id)), x(s + a, Dd) && (ia += y(s + a, t), ja += y(s + a, id)), x(s + a, Ed) && (pa += y(s + a, t)), x(s + a, Fd) && (pa += y(s + a, t)), ia += z(ia * Ac[a] / 100), ja += z(ja * Ac[a] / 100), 7 == Db && (za += z(mc[a] / 5))) :
-            3 == Db ? (402 != g && (pa = ab = 0), Ne(), g = w(q[s + a], bd), fc[a] = fc[a] + nc[a] < g ? fc[a] + nc[a] : g, fc[a] == g && 0 < g ? fc[a] = 0 : Ya = 0, te(), x(s + a, yd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, zd) && (qb += y(s + a, t)), x(s + a, Ad) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Bd) && (Ta += y(s + a, t)), x(s + a, Cd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Dd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Ed) && (Ta += y(s + a, t)), x(s + a, Fd) && (Ta += y(s + a, t)), ba += z(ba * Ac[a] / 100), U += z(U * Ac[a] / 100), x(s + a, Jd) && A(100) < y(s + a, t) && (pb = 1), x(s + a, Kd) && (ta += y(s + a, t)), x(s + a, Md) && A(100) < y(s + a, t) && (rb = 1), x(s + a, Od) && A(100) < y(s + a, t) && (ia += z(y(s + a, id) * ia / 100), ja += z(y(s + a, id) * ja / 100))) :
-            4 == Db || 5 == Db ? (x(s + a, yd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, zd) && (Z += y(s + a, t), qb += y(s + a, t)), x(s + a, Ad) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Bd) && (pa += y(s + a, t), Ta += y(s + a, t)), x(s + a, Cd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Dd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Ed) && (pa += y(s + a, t), Ta += y(s + a, t)), x(s + a, Fd) && (pa += y(s + a, t), Ta += y(s + a, t)), ba += z(ba * Ac[a] / 100), U += z(U * Ac[a] / 100), x(s + a, Jd) && A(100) < y(s + a, t) && (pb = 1), x(s + a, Kd) && (ta += y(s + a, t))) :
-            6 == Db ? (0 != Ya && (pa = ab = 0), x(s + a, yd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, zd) && (qb += y(s + a, t)), x(s + a, Ad) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Bd) && (Ta += y(s + a, t)), x(s + a, Cd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Dd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Ed) && (Ta += y(s + a, t)), x(s + a, Fd) && (Ta += y(s + a, t)), ba += z(ba * Ac[a] / 100), U += z(U * Ac[a] / 100), x(s + a, Jd) && A(100) < y(s + a, t) && (pb = 1), x(s + a, Kd) && (ta += y(s + a, t)), x(s + a, Md) && A(100) < y(s + a, t) && (rb = 1), x(s + a, Od) && A(100) < y(s + a, t) && (ia += z(y(s + a, id) * ia / 100), ja += z(y(s + a, id) * ja / 100))) :
-            8 == Db && (ia = w(q[s + a], dd), ja = w(q[s + a], ed), x(s + a, yd) && (ia += y(s + a, t), ja += y(s + a, id)), x(s + a, yd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, zd) && (Z += y(s + a, t), qb += y(s + a, t)), x(s + a, Ad) && (ia += y(s + a, t), ja += y(s + a, id)), x(s + a, Ad) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Bd) && (pa += y(s + a, t), Ta += y(s + a, t)), x(s + a, Cd) && (ia += y(s + a, t), ja += y(s + a, id)), x(s + a, Cd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Dd) && (ia += y(s + a, t), ja += y(s + a, id)), x(s + a, Dd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Ed) && (pa += y(s + a, t), Ta += y(s + a, t)), x(s + a, Fd) && (pa += y(s + a, t), Ta += y(s + a, t)), ia += z(ia * Ac[a] / 100), ja += z(ja * Ac[a] / 100), ba += z(ba * Ac[a] / 100), U += z(U * Ac[a] / 100));
+        3 == Db ? (402 != g && (pa = ab = 0), Ne(), g = w(q[s + a], bd), fc[a] = fc[a] + nc[a] < g ? fc[a] + nc[a] : g, fc[a] == g && 0 < g ? fc[a] = 0 : Ya = 0, te(), x(s + a, yd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, zd) && (qb += y(s + a, t)), x(s + a, Ad) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Bd) && (Ta += y(s + a, t)), x(s + a, Cd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Dd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Ed) && (Ta += y(s + a, t)), x(s + a, Fd) && (Ta += y(s + a, t)), ba += z(ba * Ac[a] / 100), U += z(U * Ac[a] / 100), x(s + a, Jd) && A(100) < y(s + a, t) && (pb = 1), x(s + a, Kd) && (ta += y(s + a, t)), x(s + a, Md) && A(100) < y(s + a, t) && (rb = 1), x(s + a, Od) && A(100) < y(s + a, t) && (ia += z(y(s + a, id) * ia / 100), ja += z(y(s + a, id) * ja / 100))) :
+        4 == Db || 5 == Db ? (x(s + a, yd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, zd) && (Z += y(s + a, t), qb += y(s + a, t)), x(s + a, Ad) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Bd) && (pa += y(s + a, t), Ta += y(s + a, t)), x(s + a, Cd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Dd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Ed) && (pa += y(s + a, t), Ta += y(s + a, t)), x(s + a, Fd) && (pa += y(s + a, t), Ta += y(s + a, t)), ba += z(ba * Ac[a] / 100), U += z(U * Ac[a] / 100), x(s + a, Jd) && A(100) < y(s + a, t) && (pb = 1), x(s + a, Kd) && (ta += y(s + a, t))) :
+        6 == Db ? (0 != Ya && (pa = ab = 0), x(s + a, yd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, zd) && (qb += y(s + a, t)), x(s + a, Ad) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Bd) && (Ta += y(s + a, t)), x(s + a, Cd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Dd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Ed) && (Ta += y(s + a, t)), x(s + a, Fd) && (Ta += y(s + a, t)), ba += z(ba * Ac[a] / 100), U += z(U * Ac[a] / 100), x(s + a, Jd) && A(100) < y(s + a, t) && (pb = 1), x(s + a, Kd) && (ta += y(s + a, t)), x(s + a, Md) && A(100) < y(s + a, t) && (rb = 1), x(s + a, Od) && A(100) < y(s + a, t) && (ia += z(y(s + a, id) * ia / 100), ja += z(y(s + a, id) * ja / 100))) :
+        8 == Db && (ia = w(q[s + a], dd), ja = w(q[s + a], ed), x(s + a, yd) && (ia += y(s + a, t), ja += y(s + a, id)), x(s + a, yd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, zd) && (Z += y(s + a, t), qb += y(s + a, t)), x(s + a, Ad) && (ia += y(s + a, t), ja += y(s + a, id)), x(s + a, Ad) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Bd) && (pa += y(s + a, t), Ta += y(s + a, t)), x(s + a, Cd) && (ia += y(s + a, t), ja += y(s + a, id)), x(s + a, Cd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Dd) && (ia += y(s + a, t), ja += y(s + a, id)), x(s + a, Dd) && (ba += y(s + a, t), U += y(s + a, id)), x(s + a, Ed) && (pa += y(s + a, t), Ta += y(s + a, t)), x(s + a, Fd) && (pa += y(s + a, t), Ta += y(s + a, t)), ia += z(ia * Ac[a] / 100), ja += z(ja * Ac[a] / 100), ba += z(ba * Ac[a] / 100), U += z(U * Ac[a] / 100));
         x(s + a, Ld) && (za += y(s + a, t) + z(za * y(s + a, id) / 100));
         (3 == Db || 4 == Db || 6 == Db) && x(s + a, Zd) && A(100) < y(s + a, t) && (ya = y(s + a, id));
         x(s + a, $d) && A(100) < y(s + a, t) && (Xa = 2)
@@ -2390,8 +2394,8 @@ function Zg(a, b) {
         var c = 0.5 * (a.a[b][9].x + a.a[b][10].x),
             d = 0.5 * (a.a[b][9].y + a.a[b][10].y),
             e = tc[b],
-            e = 1 != ga ? G.m(c - 200 - e, d - 100 - e, c + 200 + e, d + 100 + e) : v.m(c - 600, d - 300, c + 600, d + 300, 1 - (b >> 2) << 2); -
-        1 != e && 9 == I.e[z(K(d, 8, 383) / 8)][z(K(c, 0, 511) / 8)] && (c < (1 != ga ? G.a[e][G.n].x : a.a[e][2].x) ? (a.a[b][0].x += 0.25, a.a[b][1].x += 0.25) : (a.a[b][0].x -= 0.25, a.a[b][1].x -= 0.25), d < (1 != ga ? G.a[e][G.n].y : a.a[e][2].y) ? (a.a[b][0].y += 0.25, a.a[b][1].y += 0.25) : (a.a[b][0].y -= 0.25, a.a[b][1].y -= 0.25), a.a[b][0].x +=
+            e = 1 != ga ? G.m(c - 200 - e, d - 100 - e, c + 200 + e, d + 100 + e) : v.m(c - 600, d - 300, c + 600, d + 300, 1 - (b >> 2) << 2);
+            - 1 != e && 9 == I.e[z(K(d, 8, 383) / 8)][z(K(c, 0, 511) / 8)] && (c < (1 != ga ? G.a[e][G.n].x : a.a[e][2].x) ? (a.a[b][0].x += 0.25, a.a[b][1].x += 0.25) : (a.a[b][0].x -= 0.25, a.a[b][1].x -= 0.25), d < (1 != ga ? G.a[e][G.n].y : a.a[e][2].y) ? (a.a[b][0].y += 0.25, a.a[b][1].y += 0.25) : (a.a[b][0].y -= 0.25, a.a[b][1].y -= 0.25), a.a[b][0].x +=
             N(-0.25, 0.25), a.a[b][0].y += N(-0.25, 0.25), a.a[b][1].x += N(-0.25, 0.25), a.a[b][1].y += N(-0.25, 0.25))
     }
 }
@@ -2446,18 +2450,18 @@ Pg.prototype.move = function() {
                 this.step[a] = Mg;
                 for (b = 0; 11 > b; b++) this.a[a][b].x += N(-2, 2), this.a[a][b].y += N(-1, -3);
                 if (1 == ga)
-                    for (e = 1 - (a >> 2) << 2, b = 0; 4 > b; b++) x(s + e + b, Xd) && A(100) < y(s + e + b, t) && (c = v.m(this.a[a][0].x - 600, this.a[a][0].y - 300, this.a[a][0].x + 600, this.a[a][0].y + 300, a >> 2 << 2), -1 != c && v.p(y(s + e + b, id), this.a[a][0].x, this.a[a][0].y, c))
+                    for (e = 1 - (a >> 2) << 2, b = 0; 4 > b; b++) x(s + e + b, Xd) && A(100) < y(s + e + b, t) && (c = v.m(this.a[a][0].x - 600, this.a[a][0].y - 300, this.a[a][0].x + 600, this.a[a][0].y + 300, a >> 2 << 2), -1 != c && v.p(y(s + e + b, id), this.a[a][0].x, this.a[a][0].y,c))
             }
             this.v == a && 1 != ga && (this.a[this.v][this.T].x += (cg - this.a[this.v][this.T].x) * (0 == p[a] ? 0.04 : 0.2), this.a[this.v][this.T].y += (fg - this.a[this.v][this.T].y) * (0 == p[a] ? 0.04 : 0.2));
             0 == this.step[a] || 1 == this.step[a] ? this.StickmanBoxer(a) :
-                2 == this.step[a] ? this.Gladiator(a) :
-                3 == this.step[a] ? this.Sniper(a) :
-                4 == this.step[a] ? this.Magician(a) :
-                5 == this.step[a] ? this.Priest(a) :
-                6 == this.step[a] ? this.Gunner(a) :
-                7 == this.step[a] ? this.Whipper(a) :
-                8 == this.step[a] ? this.Angel(a) :
-                this.step[a] == Mg && (Y(this.a[a][1], this.a[a][2], 3.6, 0.5, 0.5), Y(this.a[a][3], this.a[a][5], 4.8, 0.5, 0.5), Y(this.a[a][4], this.a[a][6], 4.8, 0.5, 0.5), Y(this.a[a][7], this.a[a][9], 4.8, 0.5, 0.5), Y(this.a[a][8], this.a[a][10], 4.8, 0.5, 0.5));
+            2 == this.step[a] ? this.Gladiator(a) :
+            3 == this.step[a] ? this.Sniper(a) :
+            4 == this.step[a] ? this.Magician(a) :
+            5 == this.step[a] ? this.Priest(a) :
+            6 == this.step[a] ? this.Gunner(a) :
+            7 == this.step[a] ? this.Whipper(a) :
+            8 == this.step[a] ? this.Angel(a) :
+            this.step[a] == Mg && (Y(this.a[a][1], this.a[a][2], 3.6, 0.5, 0.5), Y(this.a[a][3], this.a[a][5], 4.8, 0.5, 0.5), Y(this.a[a][4], this.a[a][6], 4.8, 0.5, 0.5), Y(this.a[a][7], this.a[a][9], 4.8, 0.5, 0.5), Y(this.a[a][8], this.a[a][10], 4.8, 0.5, 0.5));
             0 < (this.h[a] & 1) && (this.count[a] = 0);
             for (b = this.h[a] = 0; 11 > b; b++) this.kb(a, b)
         }
@@ -2531,7 +2535,7 @@ Pg.prototype.Gladiator = function(a) {
         Zg(this, a)
     }
     if (-1 != this.g[a] && (x(s + a, Od) && A(100) < y(s + a, t) && (b += z(y(s + a, id) * b / 100), g += z(y(s + a, id) * g / 100)), d.q(this.a[a][5], this.a[a][6]),
-            Xg(d), Tg(d, r), c = this.a[a][6].x + d.x / 2, k = this.a[a][6].y + d.y / 2, -1 != ((A(100) <= z(Math.min(mc[a], 100))) && (b *= 2, g *= 2, CRIT = true), 1 != ga ? G.K(1, 0, 0, b, g, c, k, Kg(d.x), Kg(d.y), CRIT) : v.K(1, 0, 0, b, g, c, k, Kg(d.x), Kg(d.y), e)) && (this.g[a] = -1, x(s + a, vd) && (k = ig(1, z(this.L * y(s + a, t) / 100)), Ne(), p[a] = K(p[a] + k, 0, kc[a]), te(), ne.add(this.a[a][0].x, this.a[a][0].y, 0, k, 65280)), x(s + a, wd) && 0 == ga && A(100) < y(s + a, t) && pe.add(this.a[a][0].x, this.a[a][0].y, 2, 0, 0), x(s + a, xd) && 0 == ga && A(100) < y(s + a, t)))) {
+            Xg(d), Tg(d, r), c = this.a[a][6].x + d.x / 2, k = this.a[a][6].y + d.y / 2, -1 != ((A(100) <= z(Math.min(mc[a], 100)))&&(b *= 2, g *= 2, CRIT = true),1 != ga ? G.K(1, 0, 0, b, g, c, k, Kg(d.x), Kg(d.y), CRIT) : v.K(1, 0, 0, b, g, c, k, Kg(d.x), Kg(d.y), e)) && (this.g[a] = -1, x(s + a, vd) && (k = ig(1, z(this.L * y(s + a, t) / 100)), Ne(), p[a] = K(p[a] + k, 0, kc[a]), te(), ne.add(this.a[a][0].x, this.a[a][0].y, 0, k, 65280)), x(s + a, wd) && 0 == ga && A(100) < y(s + a, t) && pe.add(this.a[a][0].x, this.a[a][0].y, 2, 0, 0), x(s + a, xd) && 0 == ga && A(100) < y(s + a, t)))) {
         g = 100;
         for (b = 0; 4 > b; b++) x(s + b, Sd) && (g += y(s + b, t));
         pe.add(this.a[a][0].x, this.a[a][0].y, 1, z(this.L * g / 100), 0)
@@ -2604,7 +2608,7 @@ Pg.prototype.Priest = function(a) {
     var b, c, d = 1 - (a >> 2) << 2;
     b = qc[a] + $g(rc[a] - qc[a] + 1);
     c = tc[a];
-    var projCount = w(q[s + a], 36) + z(lc[a] / 2);
+    var projCount = w(q[s + a], 36) + z(lc[a]/2);
     var e = 0.5 * (this.a[a][9].x + this.a[a][10].x),
         g = 0.5 * (this.a[a][9].y + this.a[a][10].y);
     c = 1 != ga ? G.m(e - c, g - c / 2, e + c, g + c / 2) : v.m(e - c, g - c / 2, e + c, g + c / 2, d);
@@ -2624,10 +2628,11 @@ Pg.prototype.Priest = function(a) {
                     hitID = arrayID[z(A(arrayLen))];
                     this.p(a, this.a[a][6].x, this.a[a][6].y, hitID);
                 }
-            } else {
+            }
+            else {
                 var arrayID = new Array(0);
                 var arrayLen = 0;
-                for (b = d; b < d + 4; b++) {
+                for (b = d; b < d+4; b++) {
                     0 != v.search[b] && (arrayID.push(b), arrayLen += 1)
                 }
                 for (var maxHit = projCount; maxHit > 0; maxHit -= 1) {
@@ -2663,29 +2668,30 @@ Pg.prototype.Gunner = function(a) {
     var e = tc[a],
         g = 0.5 * (this.a[a][9].x + this.a[a][10].x),
         k = 0.5 * (this.a[a][9].y + this.a[a][10].y);
-    c = 1 != ga ? G.m(g - e, k - e, g + e, k + e) : v.m(g - e, k - e, g + e, k + e, c); -
-    1 != c && this.v != a && (1 != ga ? d.q(G.a[c][G.n], this.a[a][6]) : d.q(this.a[c][2], this.a[a][6]), Xg(d), this.a[a][5].x += 0.2 * d.x, this.a[a][5].y += 0.2 * d.y, this.a[a][6].x += 0.2 * d.x, this.a[a][6].y += 0.2 * d.y, this.a[a][1].x -= 0.4 * d.x, this.a[a][1].y -= 0.4 * d.y);
-    if (reloadCD[a] == -1) {
-        var cost = w(q[s + a], 36)
-        if (dc >= cost) {
-            dc = K(dc - cost, 0, 9999999);
-            reloadCD[a] = ig(w(q[s + a], 59) - mc[a], 30);
-            ne.add(this.a[a][0].x, this.a[a][0].y, 0, "RELOADING", 16776960);
-            if (cost > 0) {
-                ne.add(this.a[a][6].x, this.a[a][6].y, 0 > d.x ? 0.5 : -0.5, cost, 16776960);
-            }
-        }
+    c = 1 != ga ? G.m(g - e, k - e, g + e, k + e) : v.m(g - e, k - e, g + e, k + e, c);
+    - 1 != c && this.v != a && (1 != ga ? d.q(G.a[c][G.n], this.a[a][6]) : d.q(this.a[c][2], this.a[a][6]), Xg(d), this.a[a][5].x += 0.2 * d.x, this.a[a][5].y += 0.2 * d.y, this.a[a][6].x += 0.2 * d.x, this.a[a][6].y += 0.2 * d.y, this.a[a][1].x -= 0.4 * d.x, this.a[a][1].y -= 0.4 * d.y);
+    if (reloadCD[a] == -1){
+       var cost = w(q[s + a], 36)
+       if (dc >= cost){
+           dc = K(dc - cost, 0, 9999999);
+           reloadCD[a] = ig(w(q[s + a], 59) - mc[a] , 30);
+           ne.add(this.a[a][0].x, this.a[a][0].y, 0, "RELOADING", 16776960);
+           if (cost > 0){
+               ne.add(this.a[a][6].x, this.a[a][6].y, 0 > d.x ? 0.5 : -0.5, cost, 16776960);
+           }
+       }
 
-    } else if (reloadCD[a] > 0) {
+    }
+    else if (reloadCD[a] > 0){
         reloadCD[a] -= 1;
-        if (reloadCD[a] == 0) {
-            fc[a] = w(q[s + a], 58) + nc[a];
-            ne.add(this.a[a][0].x, this.a[a][0].y + 8, 0, "RELOADED", 65280);
+        if (reloadCD[a] == 0){
+        fc[a] = w(q[s + a], 58) + nc[a];
+        ne.add(this.a[a][0].x, this.a[a][0].y + 8, 0, "RELOADED", 65280);
         }
     }
 
     if (0 != this.h[a] && this.v != a) {
-        if (reloadCD[a] == 0 && fc[a] > 0) {
+        if (reloadCD[a] == 0 && fc[a] > 0){
             0 < this.l[a] && this.l[a]--;
         }
 
@@ -2694,24 +2700,25 @@ Pg.prototype.Gunner = function(a) {
             g = 0;
             Ne();
             (0 == e && fc[a] > 0) && (this.p(a, this.a[a][6].x, this.a[a][6].y, c), fc[a] -= 1, x(s + a, be) && (d = y(s + a, t), p[a] = K(p[a] + d, 0, kc[a]), ne.add(this.a[a][0].x, this.a[a][0].y, 0, d, 65280)));
-            if (fc[a] == 0) {
+            if (fc[a] == 0){
                 var cost = w(q[s + a], 36);
-                if (dc >= cost) {
+                if (dc >= cost){
                     dc = K(dc - cost, 0, 9999999);
                     reloadCD[a] = w(q[s + a], 59);
                     ne.add(this.a[a][0].x, this.a[a][0].y + 8, 0, "RELOADING", 16776960);
-                    if (cost > 0) {
+                    if (cost > 0){
                         ne.add(this.a[a][6].x, this.a[a][6].y, 0 > d.x ? 0.5 : -0.5, cost, 16776960);
                     }
-                } else {
+                }
+                else{
                     reloadCD[a] = -1;
                     ne.add(this.a[a][0].x, this.a[a][0].y + 8, 0, "NO AMMO", 16711680);
                 }
             }
             te();
             this.g[a] = -1;
-        } -
-        1 == c && (Yg(this, a), Zg(this, a))
+        }
+        - 1 == c && (Yg(this, a), Zg(this, a))
     }
     Y(this.a[a][0], this.a[a][1], 3.6, 0.5, 0.5);
     Y(this.a[a][1], this.a[a][2], 3.6, 0.5, 0.5);
@@ -2804,8 +2811,8 @@ Pg.prototype.Angel = function(a) {
         c = 1 != ga ? G.m(b - m, c - m, b + m, c + m) : v.m(b - m, c - m, b + m, c + m, e);
         for (b = 0; b < n && 0 != this.O[a][b]; b++);
         0 == this.l[a] && -1 != c && b != n && (this.l[a] = r, this.O[a][b] = 1, this.aa[a][b] = z(m / 2) + 20, this.ba[a][b] = 0, this.a[a][12].x -= 2, this.a[a][14].x += 2, this.g[a] = 15 + b, this.a[a][this.g[a]].set(this.a[a][0]), this.a[a][this.g[a]].y -= 5, this.c[a][this.g[a]].set(this.a[a][this.g[a]]), 1 != ga ? d.q(G.a[c][G.n], this.a[a][this.g[a]]) : d.q(this.a[c][1], this.a[a][this.g[a]]),
-            Xg(d), Tg(d, 2), this.a[a][this.g[a]].add(d)); -
-        1 == c && (Yg(this, a), Zg(this, a))
+            Xg(d), Tg(d, 2), this.a[a][this.g[a]].add(d));
+            - 1 == c && (Yg(this, a), Zg(this, a))
     }
     for (b = 0; b < n; b++)
         if (0 != this.O[a][b] && (this.g[a] = 15 + b, this.aa[a][b]--, 0 >= this.aa[a][b] && (1 == this.O[a][b] ? (this.O[a][b]++, d.set(this.a[a][0]), d.y -= 5, this.c[a][this.g[a]].set(this.a[a][this.g[a]]), d.q(d, this.a[a][this.g[a]]), r = Xg(d), Tg(d, 2), this.a[a][this.g[a]].add(d), this.aa[a][b] = z(r / 2)) : (this.O[a][b] = 0, this.aa[a][b] = 0, this.ba[a][b] = 0)), this.ba[a][b]--, !(0 < this.ba[a][b]) && (r = 0, x(s + a, Md) && A(100) < y(s + a, t) && (r = 1), x(s + a, Od) && A(100) <
@@ -2898,11 +2905,10 @@ Pg.prototype.b = function() { //Stickman drawing madjicks (it controls how stick
     }
 };
 //enemies
-var Pee = [ //NAMING IS HARD
-        [0], //0
-        [0, 1, 2, 3, 4], //OS (1)
-        []
-    ],
+var Pee = [     //NAMING IS HARD
+  [0],//0
+  [0,1,2,3,4],//OS (1)
+  []],
     Qe = 0,
     bh = 1,
     ch = 3,
@@ -2918,39 +2924,39 @@ var Pee = [ //NAMING IS HARD
     mg = 62,
     og = 63,
     B = [
-        //Opening Street
+				//Opening Street
         //Random's enemies start here
-        //Green Smiley Walker
-        [1, 0, 1, 1, 4280483652, 4288243251, 20, 2, 1, 1, 4294919202, 1, 16, 16, 8, 8, 0, 10, 20, 20, 0, 100, 0, 0, 0, 0, 1, 3, 1, 1, 100, 20, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 100, 1, 7, 30, 11, 30, 19, 40],
-        //Blue Smiley Walker
-        [2, 0, 1, 1, 4288234751, 4290682757, 30, 2, 1, 1, 4294965060, 1, 16, 16, 8, 8, 0, 5, 10, 20, 0, 100, 0, 0, 0, 0, 3, 5, 1, 2, 75, 20, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 100, 5, 8, 30, 12, 30, 20, 40],
-        //Orange Star Eel (Move over, blue fairy eels)
-        [3, 9, 9, 1, 4294927906, 4289352994, 100, 3, 1, 4, 4284505796, 1, 16, 16, 8, 8, 0, 20, 25, 20, 0, 100, 0, 0, 0, 1, 5, 10, 1, 2, 75, 20, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 100, 10, 9, 15, 13, 15, 21, 40],
-        //Red X Bat
-        [4, 2, 3, 1, 4294919219, 4288243251, 40, 4, 0, 2, 4289366152, 1, 16, 16, 8, 8, 0, 20, 150, 50, 4, 100, 0, 0, 0, 0, 5, 10, 1, 100, 125, 20, 90, 1, 25, 0, 0, -10, 0, 0, 10, 1, 0, 5, 4294919168, 2, 8, 16, 8, 8, 50, 10, 30, 100, 0, 1, 1, 1, 3, 1, 0, 100, 10, 10, 15, 14, 15, 22, 40],
+          //Green Smiley Walker
+        [1,0,1,1,4280483652,4288243251,20,2,1,1,4294919202,1,16,16,8,8,0,10,20,20,0,100,0,0,0,0,1,3,1,1,100,20,20,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,100,0,0,0,0,0,0,0,100,1,7,30,11,30,19,40],
+          //Blue Smiley Walker
+        [2,0,1,1,4288234751,4290682757,30,2,1,1,4294965060,1,16,16,8,8,0,5,10,20,0,100,0,0,0,0,3,5,1,2,75,20,20,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,100,0,0,0,0,0,0,0,100,5,8,30,12,30,20,40],
+          //Orange Star Eel (Move over, blue fairy eels)
+        [3,9,9,1,4294927906,4289352994,100,3,1,4,4284505796,1,16,16,8,8,0,20,25,20,0,100,0,0,0,1,5,10,1,2,75,20,20,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,100,0,0,0,0,0,0,0,100,10,9,15,13,15,21,40],
+          //Red X Bat
+        [4,2,3,1,4294919219,4288243251,40,4,0,2,4289366152,1,16,16,8,8,0,20,150,50,4,100,0,0,0,0,5,10,1,100,125,20,90,1,25,0,0,-10,0,0,10,1,0,5,4294919168,2,8,16,8,8,50,10,30,100,0,1,1,1,3,1,0,100,10,10,15,14,15,22,40],
         //My enemies end here
         [5, 0, 2, 2, 8421504, 10053171, 500, 3, 0, 2, 4286611584, 1, 8, 8, 8, 8, 0, 0, 100, 10, 0, 100, 0, 0, 0, 0, 1, 3, 10, 10, 10, 15, 120, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 100, 0, 0, 0, 0, 0, 0],
         //Army's Enemy starts here
-        //Grass Land 1
+                //Grass Land 1
         [5, 1, 24, 1, 2604288, 41216, 40, 3, 1, 4, 4280698153, 1, 16, 16, 8, 8, 0, 0, 20, 10, 0, 100, 0, 0, 0, 0, 3, 4, 1, 15, 50, 20, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 10, 0, 0, 0, 0, 0, 0],
-        [6, 1, 4, 1, 6733146, 4891201, 70, 3, 1, 4, 4280698153, 1, 12, 12, 4, 4, 0, 0, 80, 60, 0, 100, 0, 2, 0, 0, 1, 2, 1, 5, 50, 200, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 20, 0, 0, 0, 0, 0, 0],
+		[6, 1, 4, 1, 6733146, 4891201, 70, 3, 1, 4, 4280698153, 1, 12, 12, 4, 4, 0, 0, 80, 60, 0, 100, 0, 2, 0, 0, 1, 2, 1, 5, 50, 200, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 20, 0, 0, 0, 0, 0, 0],
         [6, 2, 1, 1, 16424192, 9539985, 50, 3, 1, 1, 4283914583, 1, 16, 16, 8, 8, 0, 0, 80, 10, 0, 100, 0, 0, 0, 0, 2, 6, 1, 10, 50, 20, 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 30, 0, 0, 0, 0, 0, 0],
         [7, 1, 24, 2, 41216, 34304, 150, 3, 1, 4, 4280698153, 1, 24, 24, 12, 12, 0, 0, 20, 40, 0, 100, 0, 0, 0, 0, 6, 8, 1, 15, 5, 20, 40, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 150, 30, 0, 0, 0, 0, 0, 0],
         [8, 2, 1, 3, 14320384, 7829367, 500, 1, 1, 1, 4283914583, 1, 64, 32, 48, 16, 0, 0, 200, 40, 1, 104, 0, 0, 0, 0, 15, 20, 1, 5, 100, 1E3, 150, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 650, 200, 0, 0, 0, 0, 0, 0],
         //GL2 
-        [7, 5, 30, 1, 14554217, 10115887, 100, 4, 0, 13, 4294967040, 1, 24, 24, 12, 12, 0, 0, 200, 40, 2, 100, 0, 0, 0, 0, 3, 4, 1, 250, 20, 10, 90, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 150, 30, 0, 0, 0, 0, 0, 0],
+        [7, 5, 30, 1, 14554217,	10115887, 100, 4, 0, 13, 4294967040, 1, 24, 24, 12, 12, 0, 0, 200, 40, 2, 100, 0, 0, 0, 0, 3, 4, 1, 250, 20, 10, 90, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 150, 30, 0, 0, 0, 0, 0, 0],
         [8, 5, 27, 1, 255, 10115887, 200, 3, 1, 4, 4280698153, 1, 24, 24, 12, 12, 0, 0, 20, 40, 0, 100, 0, 0, 0, 0, 6, 8, 1, 15, 5, 20, 40, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 150, 30, 0, 0, 0, 0, 0, 0],
         [9, 5, 30, 1, 41216, 10115887, 150, 3, 1, 4, 4280698153, 1, 24, 24, 12, 12, 0, 0, 20, 40, 0, 100, 0, 0, 0, 0, 6, 8, 1, 15, 5, 20, 40, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 150, 30, 0, 0, 0, 0, 0, 0],
         [8, 1, 2, 1, 2604288, 34304, 100, 1, 1, 9, 4280698153, 1, 24, 24, 12, 12, 0, 0, 20, 40, 0, 100, 0, 0, 0, 0, 6, 8, 1, 15, 5, 20, 40, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 150, 30, 0, 0, 0, 0, 0, 0],
         [10, 5, 30, 2, 41216, 10115887, 800, 4, 0, 13, 4280698153, 1, 48, 48, 24, 24, 0, 0, 250, 40, 0, 100, 0, 0, 0, 0, 12, 16, 1, 150, 5, 20, 150, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 150, 30, 0, 0, 0, 0, 0, 0],
-        //Castle
-        [20, 4, 4, 3, 13421772, 10053171, 5E3, 5, 1, 1, 4294918208, 1, 48, 16, 48, 8, 0, 0, 100, 20, 5, 99, 0, 0, 0, 0, 20, 40, 1, 0, 50, 300, 40, 0, 0, 0, 0, 0, 0, 0, 90, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1E3, 1E3, 29, 3, 0, 0, 30, 20],
+        		//Castle
+		[20, 4, 4, 3, 13421772, 10053171, 5E3, 5, 1, 1, 4294918208, 1, 48, 16, 48, 8, 0, 0, 100, 20, 5, 99, 0, 0, 0, 0, 20, 40, 1, 0, 50, 300, 40, 0, 0, 0, 0, 0, 0, 0, 90, 0, 0, 0, 4278190080, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1E3, 1E3, 29, 3, 0, 0, 30, 20],
         [0, 0, 0, 0, 0, 0, 0, 4, 0, 2, 4286611584, 1, 8, 8, 8, 8, 0, 0, 300, 10, 3, 100, 0, 0, 0, 0, 3, 4, 12, 200, 50, 15, 200, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 5, 2164219920, 1, 16, 48, 12, 36, 50, 20, 0, 100, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         []
     ],
-    fh = [20, 20, 20, 20, 18, 8, 20, 20, 8, 20, 16, 16, 20, 20, 16, 16, 16, 14, 8], //enemy hitbox width
-    gh = [20, 20, 20, 20, 24, 40, 20, 20, 20, 20, 16, 24, 20, 20, 16, 16, 16, 14, 40], //enemy hitbox height
-    ah = [1, 0.2, 1, 0.2, 2, 0.5, 1, 0.1, 1, 0.1, 1, 1, 0.1, 0.1, 1, 1, 0.2, 1, 0.5], //enemy knockback amount
+    fh = [20, 20, 20, 20, 18, 8, 20, 20, 8, 20, 16, 16, 20, 20, 16, 16, 16, 14, 8],			 //enemy hitbox width
+    gh = [20, 20, 20, 20, 24, 40, 20, 20, 20, 20, 16, 24, 20, 20, 16, 16, 16, 14, 40],	     //enemy hitbox height
+    ah = [1, 0.2, 1, 0.2, 2, 0.5, 1, 0.1, 1, 0.1, 1, 1, 0.1, 0.1, 1, 1, 0.2, 1, 0.5],		 //enemy knockback amount
     G = new hh;
 
 function hh() {
@@ -3043,9 +3049,9 @@ aa.K = function(a, b, c, d, e, g, k, r, m, criticalDamage) {
     var n = -1,
         F, H, M;
     v.L = 0;
-    r *= 0.5; //
+    r *= 0.5;   //
     m *= 0.5;
-    if (criticalDamage)
+    if(criticalDamage)
         damageColor = 0xff5500;
     else
         damageColor = 12632256;
@@ -3053,11 +3059,11 @@ aa.K = function(a, b, c, d, e, g, k, r, m, criticalDamage) {
     //idk why this works. sdvso ifnl sd
     //Enemy Strength/Weakness stuff
     for (var E = 0; E < this.index && (F = B[this.id[E]][ch], H = B[this.id[E]][bh], M = z(fh[H] / 2) * z(F / 2 + 1), F *= z(gh[H] / 2), 0 == this.r[E] || this.a[E][this.n].x - M > g + r || this.a[E][this.n].x + M < g - r || this.a[E][this.n].y - F > k + m || this.a[E][this.n].y + F < k - m || (M = d + z(A(e - d + 1)), 4 == b ? (this.D[E] = c - z(c * B[this.id[E]][tg] / 100), this.H[E] = M, 0 > B[this.id[E]][tg] && (this.H[E] = ig(1, M - z(M * B[this.id[E]][tg] / 100)))) :
-            (0 == b ? M = ig(1, M - B[this.id[E]][pg]) :
-                1 == b ? M = ig(1, M - z(M * B[this.id[E]][qg] / 100)) :
-                2 == b ? M = ig(1, M - z(M * B[this.id[E]][rg] / 100)) :
-                3 == b && (M = ig(1, M - z(M * B[this.id[E]][sg] / 100))), this.r[E] = ig(this.r[E] - M, 0), 0 == (wc & 1) && ne.add(this.a[E][this.n].x, this.a[E][this.n].y - F, 1, M, damageColor), this.S[E] = M), 2 == b ? (this.C[E] = 500 - z(500 * B[this.id[E]][rg] / 100), this.X[E] = c) :
-            5 == b && (this.B[E] = c - z(c * B[this.id[E]][ug] / 100)), n = E, v.L += M, Fb = this.r[E], Gb = B[this.id[E]][lg], Hb = 100, Ib = this.id[E], 0 != a)); E++);
+    (0 == b ? M = ig(1, M - B[this.id[E]][pg]) :
+    1 == b ? M = ig(1, M - z(M * B[this.id[E]][qg] / 100)) :
+    2 == b ? M = ig(1, M - z(M * B[this.id[E]][rg] / 100)) :
+    3 == b && (M = ig(1, M - z(M * B[this.id[E]][sg] / 100))), this.r[E] = ig(this.r[E] - M, 0), 0 == (wc & 1) && ne.add(this.a[E][this.n].x, this.a[E][this.n].y - F, 1, M, damageColor), this.S[E] = M), 2 == b ? (this.C[E] = 500 - z(500 * B[this.id[E]][rg] / 100), this.X[E] = c) :
+    5 == b && (this.B[E] = c - z(c * B[this.id[E]][ug] / 100)), n = E, v.L += M, Fb = this.r[E], Gb = B[this.id[E]][lg], Hb = 100, Ib = this.id[E], 0 != a)); E++);
     return n
 };
 aa.p = function(a, b) {
@@ -3145,9 +3151,10 @@ aa.p = function(a, b) {
 function Jg(a, b, c) {
     //fixes bug
     for (var d, e = 0, g = 0; g < ze; g++)
-        if (0 != (Ae[g] & Ce)) {
-            //what the fuck is this and why does it work
-            for (var aaa = 0; aaa < 16; aaa++) var k = Pee[stx][aaa + 1];
+        if (0 != (Ae[g] & Ce))
+        {
+          //what the fuck is this and why does it work
+          for (var aaa = 0; aaa < 16; aaa++) var k = Pee[stx][aaa + 1];
             for (d = 0; d < k; d++) e < B[a.id[b]][Qe] && (e = B[a.id[b]][Qe]), d += B[a.id[b]][Re]
         }
     //shows enemy info in stage when you have the book
@@ -3182,8 +3189,8 @@ function Jg(a, b, c) {
     for (d = 0; 4 > d; d++) x(s + d, Qd) && (e += y(s + d, t)), x(s + d, Rd) && (g += y(s + d, t)), x(s + d, Sd) && (k += y(s + d, t));
     for (d = 0; 4 > d; d++)
         if (x(s + d, Xd) && A(100) < y(s + d, t)) {
-            var r = G.m(a.a[b][0].x - 600, a.a[b][0].y - 300, a.a[b][0].x + 600, a.a[b][0].y + 300); -
-            1 != r && v.p(y(s + d, id), a.a[b][0].x, a.a[b][0].y, r)
+            var r = G.m(a.a[b][0].x - 600, a.a[b][0].y - 300, a.a[b][0].x + 600, a.a[b][0].y + 300);
+            - 1 != r && v.p(y(s + d, id), a.a[b][0].x, a.a[b][0].y, r)
         }
     r = 0;
     17 == a.step[b] && (r = a.d[b] - 1);
@@ -3202,24 +3209,24 @@ hh.prototype.move = function() {
         else {
             if (0 < this.C[a] && 0 < this.r[a] && (this.C[a]--, A(100) < this.X[a])) continue;
             0 == b ? a = this.lb(a) :
-                1 == b ? a = this.sa(a) :
-                2 == b ? a = this.ta(a) :
-                3 == b ? a = this.ua(a) :
-                4 == b ? a = this.ma(a, b) :
-                5 == b ? a = this.na(a, b) :
-                6 == b ? a = this.va(a) :
-                7 == b ? a = this.wa(a) :
-                8 == b ? a = this.xa(a) :
-                9 == b ? a = this.eb(a, b) :
-                10 == b ? a = this.mb(a) :
-                11 == b ? a = this.nb(a) :
-                12 == b ? a = this.ma(a, b) :
-                13 == b ? a = this.eb(a, b) :
-                14 == b ? a = this.ob(a) :
-                15 == b ? a = this.pb(a) :
-                16 == b ? a = this.qb(a) :
-                17 == b ? a = this.rb(a) :
-                18 == b && (a = this.na(a, b))
+            1 == b ? a = this.sa(a) :
+            2 == b ? a = this.ta(a) :
+            3 == b ? a = this.ua(a) :
+            4 == b ? a = this.ma(a, b) :
+            5 == b ? a = this.na(a, b) :
+            6 == b ? a = this.va(a) :
+            7 == b ? a = this.wa(a) :
+            8 == b ? a = this.xa(a) :
+            9 == b ? a = this.eb(a, b) :
+            10 == b ? a = this.mb(a) :
+            11 == b ? a = this.nb(a) :
+            12 == b ? a = this.ma(a, b) :
+            13 == b ? a = this.eb(a, b) :
+            14 == b ? a = this.ob(a) :
+            15 == b ? a = this.pb(a) :
+            16 == b ? a = this.qb(a) :
+            17 == b ? a = this.rb(a) :
+            18 == b && (a = this.na(a, b))
         }
     }
 };
@@ -3278,8 +3285,8 @@ hh.prototype.sa = function(a) {
         W(this.a[a][0], this.c[a][0], 0.05, 0.99);
         W(this.a[a][1], this.c[a][1], 0.05, 0.9);
         W(this.a[a][2], this.c[a][2], 0.05, 0.9);
-        b = v.m(this.a[a][0].x - 200, this.a[a][0].y - 50, this.a[a][0].x + 200, this.a[a][0].y + 50, 0); -
-        1 != b && (this.a[a][0].x += v.a[b][2].x < this.a[a][0].x ? -0.001 : 0.001);
+        b = v.m(this.a[a][0].x - 200, this.a[a][0].y - 50, this.a[a][0].x + 200, this.a[a][0].y + 50, 0);
+        - 1 != b && (this.a[a][0].x += v.a[b][2].x < this.a[a][0].x ? -0.001 : 0.001);
         if (0 < (this.state[a] & 2)) {
             var c = 0,
                 c = -1 != b ? v.a[b][2].x < this.a[a][0].x ? -1 : 1 : Kf(-1, 1);
@@ -3387,8 +3394,8 @@ hh.prototype.ua = function(a) {
         W(this.a[a][0], this.c[a][0], 0, 0.99);
         for (b = 1; 6 > b; b++) W(this.a[a][b], this.c[a][b], 0, 0.9);
         Rg(c, 0, 0);
-        b = v.m(this.a[a][0].x - 200, this.a[a][0].y - 200, this.a[a][0].x + 200, this.a[a][0].y + 200, 0); -
-        1 != b && (c.q(v.a[b][2], this.a[a][0]), b = Xg(c), b -= B[this.id[a]][32] / 2 - 10, 0 > b ? Tg(c, -0.01) : Tg(c, 0.01));
+        b = v.m(this.a[a][0].x - 200, this.a[a][0].y - 200, this.a[a][0].x + 200, this.a[a][0].y + 200, 0);
+        - 1 != b && (c.q(v.a[b][2], this.a[a][0]), b = Xg(c), b -= B[this.id[a]][32] / 2 - 10, 0 > b ? Tg(c, -0.01) : Tg(c, 0.01));
         b = I.e[z(K(this.a[a][0].y + 24, 0, 255) / 8)][z(K(this.a[a][0].x, 0, 511) / 8)];
         0 <= b && 8 >= b && (c.y -= 0.02);
         2 > A(100) && (c.x += N(-0.5, 0.5), c.y += N(-0.5, 0.5));
@@ -3425,8 +3432,8 @@ hh.prototype.ma = function(a, b) {
         4 == b ? (W(this.a[a][0], this.c[a][0], -0.2, 0.99), W(this.a[a][1], this.c[a][1], 0, 0.99), W(this.a[a][2], this.c[a][2], -0.1, 0.99), W(this.a[a][3], this.c[a][3], 0, 0.99), W(this.a[a][4], this.c[a][4], 0, 0.99), W(this.a[a][5], this.c[a][5], 0, 0.99), W(this.a[a][6], this.c[a][6], 0, 0.99), W(this.a[a][7], this.c[a][7], 0, 0.99), W(this.a[a][8], this.c[a][8], 0, 0.99), W(this.a[a][9], this.c[a][9], 0.3, 0.99), W(this.a[a][10],
             this.c[a][10], 0.3, 0.99)) : 12 == b && (W(this.a[a][0], this.c[a][0], -0.02, 0.99), W(this.a[a][1], this.c[a][1], 0, 0.99), W(this.a[a][2], this.c[a][2], -0.01, 0.99), W(this.a[a][3], this.c[a][3], 0, 0.99), W(this.a[a][4], this.c[a][4], 0, 0.99), W(this.a[a][5], this.c[a][5], 0, 0.99), W(this.a[a][6], this.c[a][6], 0, 0.99), W(this.a[a][7], this.c[a][7], 0, 0.99), W(this.a[a][8], this.c[a][8], 0, 0.99), W(this.a[a][9], this.c[a][9], 0.1, 0.99), W(this.a[a][10], this.c[a][10], 0.1, 0.99));
         if (50 > A(100) && 0 < (this.state[a] & 3)) {
-            var d = v.m(this.a[a][0].x - 200, this.a[a][0].y - 50, this.a[a][0].x + 200, this.a[a][0].y + 50, 0); -
-            1 != d ? this.d[a] = v.a[d][2].x < this.a[a][0].x ? 1 : 2 : 10 > A(100) && (this.d[a] = Kf(1, 2));
+            var d = v.m(this.a[a][0].x - 200, this.a[a][0].y - 50, this.a[a][0].x + 200, this.a[a][0].y + 50, 0);
+            - 1 != d ? this.d[a] = v.a[d][2].x < this.a[a][0].x ? 1 : 2 : 10 > A(100) && (this.d[a] = Kf(1, 2));
             var e = d = 1,
                 g = 0;
             12 == b && (d = 0.25, e = 0.3, g = 0.25);
@@ -3561,8 +3568,8 @@ hh.prototype.wa = function(a) {
         W(this.a[a][0], this.c[a][0], 0, 0.99);
         for (b = 1; 5 > b; b++) W(this.a[a][b], this.c[a][b], 0, 0.9);
         Rg(c, 0, 0);
-        b = v.m(this.a[a][0].x - 150, this.a[a][0].y - 50, this.a[a][0].x + 150, this.a[a][0].y + 50, 0); -
-        1 != b && (c.q(v.a[b][2], this.a[a][0]), b = Xg(c), b -= B[this.id[a]][32] / 2 - 10, 0 > b ? Tg(c, -0.01) : Tg(c, 0.01));
+        b = v.m(this.a[a][0].x - 150, this.a[a][0].y - 50, this.a[a][0].x + 150, this.a[a][0].y + 50, 0);
+        - 1 != b && (c.q(v.a[b][2], this.a[a][0]), b = Xg(c), b -= B[this.id[a]][32] / 2 - 10, 0 > b ? Tg(c, -0.01) : Tg(c, 0.01));
         0 > I.e[z(K(this.a[a][0].y - 7, 0, 255) / 8)][z(K(this.a[a][0].x, 0, 511) / 8)] && (c.y += 0.03);
         2 > A(100) && (c.x += N(-0.5, 0.5), c.y += N(-0.5, 0.5));
         this.a[a][0].add(c);
@@ -3793,8 +3800,8 @@ hh.prototype.ob = function(a) {
         W(this.a[a][2], this.c[a][2], -0.1, 0.99);
         W(this.a[a][3], this.c[a][3], -0.1, 0.99);
         Rg(c, 0, 0);
-        var d = v.m(this.a[a][0].x - 150, this.a[a][0].y - 250, this.a[a][0].x + 150, this.a[a][0].y + 250, 0); -
-        1 != d && (c.x = v.a[d][2].x - this.a[a][0].x, c.y = v.a[d][2].y - 10 - this.a[a][0].y, c.x = -10 > c.x ? -0.02 : 10 < c.x ? 0.02 : N(-0.02, 0.02), d = B[this.id[a]][32] / 2, c.y = c.y < -d ? -0.02 : c.y > d ? 0.02 : N(-0.1, 0.1));
+        var d = v.m(this.a[a][0].x - 150, this.a[a][0].y - 250, this.a[a][0].x + 150, this.a[a][0].y + 250, 0);
+        - 1 != d && (c.x = v.a[d][2].x - this.a[a][0].x, c.y = v.a[d][2].y - 10 - this.a[a][0].y, c.x = -10 > c.x ? -0.02 : 10 < c.x ? 0.02 : N(-0.02, 0.02), d = B[this.id[a]][32] / 2, c.y = c.y < -d ? -0.02 : c.y > d ? 0.02 : N(-0.1, 0.1));
         this.a[a][0].add(c);
         this.a[a][2].x -= A(0.8);
         this.a[a][3].x += A(0.8);
@@ -4451,17 +4458,17 @@ hh.prototype.M = function(a, b, c, d) {
     }
 };
 var ze = 30,
-    Ae = [3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    Ae = [3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     Ce = 1,
     Be = 2,
     kg = 4,
 
-    jg = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29, 30, 31, 32, 34, 35, 36, 38, 39, 40, 41, 42, 43, 44, 46, 49, 50, 51],
-    XX = [0, 5, 4],
+    jg = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,18,19,20,21,22,23,25,26,27,28,29,30,31,32,34,35,36,38,39,40,41,42,43,44,46,   49,50,51],
+    XX=[0,5,4],
     //Number of enemies per book panel
 
     gg = [1, 2, 3, 4, 5, 5, 6, 6, 7, 7, 9, 5, 6, 7, 1, 8, 8, 9, 9, 9, 1, 10, 11, 11, 12, 12, 13, 13, 14, 14, 12, 13, 14, 1, 15, 15, 15, 16, 16, 1, 17, 17, 18, 17, 18, 18, 18, 1, 19, 19, 19, 20, 20, 20, 21, 23, 20, 21, 21, 22, 22, 23, 22, 23, 24, 24, 24, 24, 24, 25, 1, 1, 24, 25, 26, 26, 26, 1, 27, 27, 28, 28, 1, 29, 30, 31, 32, 33, 1, 1],
-    Uf = "Town;The Start;Grassland 1;Grassland 2;Grassland 3;Grassland 4;Grassland 5;Grassland 6;Grassland 7;Grassland 8;Grassland 9;Grassland 10;Grassland 11;Path 2 (1);Path 2 (2);Misty Plains 1(harderpath);Misty Plains 2(harderpath);Misty Plains 3(harderpath);Misty Plains 4(harderpath);Misty Plains 5(harderpath);Castle Gate;Castle;Hill Country 1;Hill Country 2;Hill Country 3;Lake;Forest 1;Forest 2;Cavern 1;Cavern 2;Cavern 3;Village;Seaside 1;Seaside 2;Seaside 3;Seaside 4;Submarine 1;Submarine 2;Submarine 3;Submarine 4;Submarine Shrine;Mist Grove 1;Mist Grove 2;Mist Grove 3;???;Desert 1;Desert 2;Desert 3;Desert 4;Desert 5;Oasis;Desert 6;Desert 7;Pyramid;Desert 8;Beach 1;Beach 2;Beach 3;Resort;Cavern 4;Cavern 5;Cavern 6;Snowfield 1;Snowfield 2;Mountain 1;Mountain 2;Mountaintop;Snowfield 3;Snowfield 4;Snowfield 5;Snowfield 6;Snowfield 7;Snowfield 8;Frozen Lake;Ice Castle;Snowfield 9;Beach 4;Forest 3;Forest 4;Forest 5;Forest 6;Forget Tree;!!!;Hell 1;Hell 2;Hell 3;Hell 4;Hell 5;Island;Hell 6;Inferno 1;Inferno 2;Inferno 3;Blood Lake;Cavern 7;Cavern 8;Hell 7;Hell 8;Hell Gate;Hell Castle;Volcano".split(";"),
+    Uf = "Town;The Start;Grassland 1;Grassland 2;Grassland 3;Grassland 4;Grassland 5;Grassland 6;Grassland 7;Grassland 8;Grassland 9;Grassland 10;Grassland 11;Path 2 (1);Path 2 (2);'Harderpathfuku' (1);'Harderpathfuku' (2);'Harderpathfuku' (3);'Harderpathfuku' (4);'Harderpathfuku' (5);Castle Gate;Castle;Hill Country 1;Hill Country 2;Hill Country 3;Lake;Forest 1;Forest 2;Cavern 1;Cavern 2;Cavern 3;Village;Seaside 1;Seaside 2;Seaside 3;Seaside 4;Submarine 1;Submarine 2;Submarine 3;Submarine 4;Submarine Shrine;Mist Grove 1;Mist Grove 2;Mist Grove 3;???;Desert 1;Desert 2;Desert 3;Desert 4;Desert 5;Oasis;Desert 6;Desert 7;Pyramid;Desert 8;Beach 1;Beach 2;Beach 3;Resort;Cavern 4;Cavern 5;Cavern 6;Snowfield 1;Snowfield 2;Mountain 1;Mountain 2;Mountaintop;Snowfield 3;Snowfield 4;Snowfield 5;Snowfield 6;Snowfield 7;Snowfield 8;Frozen Lake;Ice Castle;Snowfield 9;Beach 4;Forest 3;Forest 4;Forest 5;Forest 6;Forget Tree;!!!;Hell 1;Hell 2;Hell 3;Hell 4;Hell 5;Island;Hell 6;Inferno 1;Inferno 2;Inferno 3;Blood Lake;Cavern 7;Cavern 8;Hell 7;Hell 8;Hell Gate;Hell Castle;Volcano".split(";"),
     De = [
         [6, 28, 0, 1, 0], //mind controlled by Ewan ;p
         [10, 26, 0, 2, 15],
@@ -4525,23 +4532,23 @@ var ze = 30,
     Rf = 13, //Middle on ceiling
     Sf = 14, //Right on ceiling
     Me = [
-        [ //Town
+        [		//Town
             [0, 0, O, 0, 0, O, 0, 0, O, 0, 0, O, 0, 0],
             [0, 100, O, 0]
         ],
-        [ //The Start (Random)
-            [0, 1, O, 0, 5, Q, 1, 1],
-            [0, 2, O, 0, 6, Q, 1, 3],
-            [0, 6, O, 0, 6, P, 1, 2, T, 2, 1],
-            [4, 8, O, 1, 5, T, 2, 3],
-            [4, 4, T, 2, 5, Q, 1, 2],
-            [0, 6, O, 0, 20],
-            [0, 2, O, 1, 8, Lf, 3, 1],
-            [4, 10, O, 1, 8, P, 0, 3, Lf, 3, 2],
-            [4, 2, O, 1, 8, Lf, 3, 1, Lf, 3, 2, Lf, 3, 3],
-            [0, 100, P, 1, 2, Lf, 3, 2, R, 4, 1]
+        [		//The Start (Random)
+          [0, 1, O, 0, 5, Q, 1, 1],
+          [0, 2, O, 0, 6, Q, 1, 3],
+          [0, 6, O, 0, 6, P, 1, 2, T, 2, 1],
+          [4, 8, O, 1, 5, T, 2, 3],
+          [4, 4, T, 2, 5, Q, 1, 2],
+          [0, 6, O, 0, 20],
+          [0, 2, O, 1, 8, Lf, 3, 1],
+          [4, 10, O, 1, 8, P, 0, 3, Lf, 3, 2],
+          [4, 2, O, 1, 8, Lf, 3, 1, Lf, 3, 2, Lf, 3, 3],
+          [0, 100, P, 1, 2, Lf, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 1
+        [		//Grass Land 1
             [0, 1, O, 5, 5],
             [0, 1, O, 5, 10],
             [0, 1, O, 5, 8, R, 6, 2],
@@ -4552,111 +4559,111 @@ var ze = 30,
             [0, 1, O, 5, 10, O, 6, 4, Q, 8, 4, S, 7, 8],
             [0, 100, P, 6, 2, S, 7, 2, R, 8, 4, S, 9, 1]
         ],
-        [ //Grass Land 2
+        [		//Grass Land 2
             [0, 1, O, 10, 9],
             [0, 100, P, 11, 2, Q, 12, 2, Q, 13, 2, Q, 14, 1]
         ],
-        [ //Grass Land 3
+        [		//Grass Land 3
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 4
+        [		//Grass Land 4
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 5
+        [		//Grass Land 5
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 6
+        [		//Grass Land 6
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 7
+        [		//Grass Land 7
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 8
+        [		//Grass Land 8
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 9
+        [		//Grass Land 9
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 10
+        [		//Grass Land 10
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 11
+        [		//Grass Land 11
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Path (1)
+        [		//Path (1)
             [0, 1, O, 5, 1],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Path (2)
+        [		//Path (2)
             [0, 1, O, 5, 18],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //HarderPath1
+        [		//HarderPath1
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //HarderPath2
+        [		//HarderPath2
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //HarderPath3
+        [		//HarderPath3
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //HarderPath4
+        [		//HarderPath4
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //HarderPath5
+        [		//HarderPath5
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 19
+        [		//Grass Land 19
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 20
+        [		//Grass Land 20
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 21
+        [		//Grass Land 21
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 22
+        [		//Grass Land 22
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 23
+        [		//Grass Land 23
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 24
+        [		//Grass Land 24
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 25
+        [		//Grass Land 25
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 26
+        [		//Grass Land 26
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 27
+        [		//Grass Land 27
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
-        [ //Grass Land 28
+        [		//Grass Land 28
             [0, 1, O, 5, 9],
             [0, 100, P, 2, 2, Q, 3, 2, R, 4, 1]
         ],
@@ -5084,7 +5091,7 @@ function th() {
     this.gb = new Int32Array(48 * this.s);
     this.w = this.ab = 0;
     this.cb = -1;
-    this.hurtPlayer = false; //determines if stickmen can be damaged by a tile (like lava or spikes)
+    this.hurtPlayer = false;                //determines if stickmen can be damaged by a tile (like lava or spikes)
     for (var a = 0; a < this.s; a++) this.e[a] = new Int32Array(this.i)
 }
 th.prototype.j = function(a) {
@@ -5166,20 +5173,20 @@ th.prototype.b = function() { //Code stuff that deals with cave lighting
         e = Pa[Me[this.w][nb][0]];
     for (b = 0; b < this.s; b++)
         for (a = 0; a < this.i; a++) {
-            var g = this.e[b][a]; -
-            1 != g && (
+            var g = this.e[b][a];
+            - 1 != g && (
                 9 == g ? 82 == this.w ? -1 == this.e[b - 1][a] ?
-                ag(gb, 8 * a, 8 * b, 8, 8, 0, 0, 8, 8) : Og(8 * a - 4, 8 * b, 16, 8, 5570560) :
+                    ag(gb, 8 * a, 8 * b, 8, 8, 0, 0, 8, 8) : Og(8 * a - 4, 8 * b, 16, 8, 5570560) :
                 -1 == this.e[b - 1][a] ? ag(fb, 8 * a, 8 * b, 8, 8, 0, 0, 8, 8) :
-                Og(8 * a - 4, 8 * b, 16, 8, 21916) : ag(e, 8 * a, 8 * b, 8, 8, c[g], d[g], 8, 8)
+                    Og(8 * a - 4, 8 * b, 16, 8, 21916) : ag(e, 8 * a, 8 * b, 8, 8, c[g], d[g], 8, 8)
             )
         }
 };
 var qe = new uh;
 
 function uh() {
-    this.i = 78; //map width in pixels
-    this.s = 16; //map height in pixels
+    this.i = 78;    //map width in pixels
+    this.s = 16;    //map height in pixels
     this.t = 0;
     this.e = Array(this.s);
     this.W = Array(this.s);
@@ -5249,19 +5256,19 @@ uh.prototype.b = function() {
     eg(lb, this.t + 311 - 8, 142, 16, 16, 320, 0, 16, 16, 16777215);
     eg(lb, this.t + 320 - 8, 176, 8, 16, 191, 0, 16, 16, 16777215);*/
 
-    for (a = 0; a < ze; a++) //Forces levels 33 and 71 to be invisible
+    for (a = 0; a < ze; a++)                                                                                      //Forces levels 33 and 71 to be invisible
         0 != Ae[a] && (b = 8 * De[a][0], d = 8 * De[a][1], c = 0 == a || 20 == a || 47 == a || 77 == a ? 16777215 : 33 == a ? 0 : 71 == a ? 0 : 0 != (Ae[a] & Be) ? 10027008 : 13421568, 0 == De[a][2] && Hf(this.t + b, d, 6, 6, c), c = 71 == a ? 3 : 24, Df(this.t + b, d, c, c) && If(this.t + b, d, c, c, 13369344));
     b = 8 * De[h][0];
     d = 8 * De[h][1];
     ag(Qa, this.t + b + 1 - 12, d - 14 - 11, 24, 22, 0, 0, 24, 22);
     for (a = 0; a < ze; a++)
-        0 != Ae[a] && (b = 8 * De[a][0], d = 8 * De[a][1], c = 71 == a ? 3 : 24 /*make level 71's hit box 3x3*/ , Df(this.t + b, d, c, c)) && (!Ef || 0 != a && 20 != a && 47 != a && 70 != a && 77 != a ? Ef && 0 != a && (h = a, nb = 0, f = 10) : (h = a, nb = 1, f = 50), b = K(cg, 1 + 4 * Uf[a].length, 510 - 4 * Uf[a].length), d = K(fg - 24, 8, 256), yf(D, b, d, Uf[a], 16777215, 5263440));
+        0 != Ae[a] && (b = 8 * De[a][0], d = 8 * De[a][1], c = 71 == a ? 3 : 24 /*make level 71's hit box 3x3*/, Df(this.t + b, d, c, c)) && (!Ef || 0 != a && 20 != a && 47 != a && 70 != a && 77 != a ? Ef && 0 != a && (h = a, nb = 0, f = 10) : (h = a, nb = 1, f = 50), b = K(cg, 1 + 4 * Uf[a].length, 510 - 4 * Uf[a].length), d = K(fg - 24, 8, 256), yf(D, b, d, Uf[a], 16777215, 5263440));
     a = D;
     a.Q = 4;
     yf(a, 256, 16, "World Map", -1, 13158600); //text at top of world map
     a.Q = 0;
-    0 > this.t && yf(D, 12, 16, "<<", 13158600, 5263440); -
-    720 < this.t && yf(D, 500, 16, ">>", 13158600, 5263440)
+    0 > this.t && yf(D, 12, 16, "<<", 13158600, 5263440);
+    - 720 < this.t && yf(D, 500, 16, ">>", 13158600, 5263440)
 };
 var vh = document,
     We = vh.getElementById("cv"),
@@ -5922,39 +5929,41 @@ function z(a) {
 };
 
 //Change Zoom Level of canvas ingame
-function GameResize() {
+function GameResize()
+{
     window.addEventListener('keyup', GR2, true);
 }
-
-function GR2(a) {
-    var b = a.keyCode;
-    switch (b) {
-        case 49:
-            eZoom = 1;
-            webFrame.setZoomFactor(eZoom);
-            console.log("Zoom 1x");
-            break;
-        case 50:
-            eZoom = 1.25;
-            webFrame.setZoomFactor(eZoom);
-            console.log("Zoom 1.25x");
-            break;
-        case 51:
-            eZoom = 1.5;
-            webFrame.setZoomFactor(eZoom);
-            console.log("Zoom 1.5x");
-            break;
-        case 52:
-            eZoom = 1.75;
-            webFrame.setZoomFactor(eZoom);
-            console.log("Zoom 1.75x");
-            break;
-        case 53:
-            eZoom = 2;
-            webFrame.setZoomFactor(eZoom);
-            console.log("Zoom 2x");
-            break;
-    }
+function GR2(a)
+{
+  var b = a.keyCode;
+  switch(b)
+  {
+    case 49:
+    eZoom = 1;
+    webFrame.setZoomFactor(eZoom);
+    console.log("Zoom 1x");
+    break;
+    case 50:
+    eZoom = 1.25;
+    webFrame.setZoomFactor(eZoom);
+    console.log("Zoom 1.25x");
+    break;
+    case 51:
+    eZoom = 1.5;
+    webFrame.setZoomFactor(eZoom);
+    console.log("Zoom 1.5x");
+    break;
+    case 52:
+    eZoom = 1.75;
+    webFrame.setZoomFactor(eZoom);
+    console.log("Zoom 1.75x");
+    break;
+    case 53:
+    eZoom = 2;
+    webFrame.setZoomFactor(eZoom);
+    console.log("Zoom 2x");
+    break;
+  }
 }
 
 function BoxerWhipperSTR(Str) {
@@ -5996,42 +6005,54 @@ function GladiatorDSStatAT(str, dex, option) {
     else return minAT;
 }
 
-function SniperAngleDEX(Dex, option) {
-    if (option == 1)
+function SniperAngleDEX(Dex, option)
+{
+    if(option == 1)
         r = 3;
     else
         r = 4;
 
-    if (Dex > 200) {
+    if (Dex > 200)
+    {
         addedDmg = z(50 / r) + z(4 * (Dex - 200));
-    } else
-    if (Dex > 150) {
-        addedDmg = z(50 / r) + z(2 * (Dex - 150));
-    } else
-    if (Dex > 100) {
-        addedDmg = z(1.5 * (Dex - 100)) + z(50 / r);
-    } else
-    if (Dex > 50) {
-        addedDmg = z(0.5 * (Dex - 50)) + z(50 / r);
-    } else {
-        addedDmg = z(Dex / r);
     }
+    else
+        if (Dex > 150)
+        {
+            addedDmg = z(50 / r) + z(2 * (Dex - 150));
+        }
+        else
+            if (Dex > 100)
+            {
+                addedDmg = z(1.5 * (Dex - 100)) + z(50 / r);
+            }
+            else
+                if (Dex > 50)
+                {
+                    addedDmg = z(0.5 * (Dex - 50)) + z(50 / r);
+                }
+                else
+                    {
+                        addedDmg = z(Dex / r);
+                    }
     return addedDmg;
 }
 //echs deeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-function randRange(min, max) {
+function randRange(min, max)
+{
     return Math.random() * (max - min) + min;
 }
 //gud
-function rANDOMfUNCTION(a) {
+function rANDOMfUNCTION (a)
+{
     var rANDOMmATH;
     // is
     rANDOMmATH = a + a;
     // stuppid
     return rANDOMmATH - a - a;
 }
-
-function randomStats(aaa) {
+function randomStats(aaa)
+{
     return true;
     var totalStats = gc[aaa] + lc[aaa] + mc[aaa] + nc[aaa];
     gc[aaa] = z(randRange(0, totalStats));
