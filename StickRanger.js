@@ -5209,9 +5209,8 @@ var qe = new uh;
 
 function uh() {
     this.i = 78;    //map width in pixels
-    this.s = 78;    //map height in pixels
+    this.s = 16;    //map height in pixels
     this.t = 0;
-    this.vert = 0;
     this.e = Array(this.s);
     this.W = Array(this.s);
     for (var a = 0; a < this.s; a++) this.e[a] = new Int32Array(this.i), this.W[a] = new Int32Array(this.i)
@@ -5245,28 +5244,27 @@ uh.prototype.j = function() {
 uh.prototype.b = function() {
     var a, b, c, d, e = new Qg,
         g = new Qg;
-    20 > cg && 256 > fg ? this.t = K(this.t + 4, -720, 0) : 492 < cg && 256 > fg && (this.t = K(this.t - 4, -720, 0));
-    512 > cg && 16 > fg && 0 < fg ? this.vert = K(this.vert + 4, -700, 0) : 0 < cg && 264 > fg && 350 > fg && 230 < fg && (this.vert=K(this.vert -4, -700, 0));
+    20 > cg && 256 > fg ? this.t = K(this.t + 4, -120/* replace with 720 if want prev map*/, 0) : 492 < cg && 256 > fg && (this.t = K(this.t - 4, -120/* replace with 720 if want prev map*/, 0));
     for (d = 0; d < this.s; d++)
-        for (b = 0; b < this.i; b++) - 1 != this.e[d][b] && ag(jb, this.t + 16 * b,this.vert + 16 * d, 16, 16, this.e[d][b] % 5 * 16, 16 * z(this.e[d][b] / 5), 16, 16);
+        for (b = 0; b < this.i; b++) - 1 != this.e[d][b] && ag(jb, this.t + 16 * b, 16 * d, 16, 16, this.e[d][b] % 5 * 16, 16 * z(this.e[d][b] / 5), 16, 16);
     for (a = 0; a < ze; a++)
         if (0 != (Ae[a] & Be))
             for (b = 3; 4 >= b; b++)
                 if (!(0 >= De[a][b]) && 32 != a && 70 != a && 88 != a)
-                for (e.x = 8 * De[a][0], e.y = 8 * De[a][1], g.x = 8 * (De[De[a][b]][0] - De[a][0]), g.y = 8 * (De[De[a][b]][1] - De[a][1]), d = Xg(g) / 8 - 1, Tg(g, 8), e.add(g), c = 0; c < d; c++) Hf(this.t + e.x, this.vert + e.y, 2, 2, 13421772), e.add(g);
+                for (e.x = 8 * De[a][0], e.y = 8 * De[a][1], g.x = 8 * (De[De[a][b]][0] - De[a][0]), g.y = 8 * (De[De[a][b]][1] - De[a][1]), d = Xg(g) / 8 - 1, Tg(g, 8), e.add(g), c = 0; c < d; c++) Hf(this.t + e.x, e.y, 2, 2, 13421772), e.add(g);
     for (d = 0; d < this.s; d++)
-        for (b = 0; b < this.i; b++) - 1 != this.W[d][b] && ag(lb, this.t + 16 * b + 8, this.vert + 16 * d + 8, 16, 16, 16 * this.W[d][b], 0, 16, 16);
-    eg(lb, this.t + 384 - 8, this.vert +124, 16, 16, 16, 0, 16, 16, 8421631); //Draw images directly to the world map
-    eg(lb, this.t + 504 - 8, this.vert +116, 16, 16, 48, 0, 16, 16, 16777215);
-    eg(lb, this.t + 552 - 8, this.vert +116, 16, 16, 64, 0, 16, 16, 16777215);
-    eg(lb, this.t + 592 - 8, this.vert +100, 16, 16, 32, 0, 16, 16, 16777215);
-    eg(lb, this.t + 672 - 8, this.vert +68, 16, 16, 32, 0, 16, 16, 16777215);
-    eg(lb, this.t + 808 - 8, this.vert +132, 16, 16, 16, 0, 16, 16, 13434879);
-    eg(lb, this.t + 904 - 8, this.vert +164, 16, 16, 112, 0, 16, 16, 13434879);
-    eg(lb, this.t + 1040 - 8, this.vert +172, 16, 16, 128, 0, 16, 16, 13434879);
-    eg(lb, this.t + 1088 - 8, this.vert +100, 16, 16, 32, 0, 16, 16, 16777215);
-    eg(lb, this.t + 1160 - 8, this.vert +84, 16, 16, 32, 0, 16, 16, 16777215);
-    eg(lb, this.t + 1112 - 8, this.vert +44, 32, 16, 144, 0, 32, 16, 16777215);
+        for (b = 0; b < this.i; b++) - 1 != this.W[d][b] && ag(lb, this.t + 16 * b + 8, 16 * d + 8, 16, 16, 16 * this.W[d][b], 0, 16, 16);
+    eg(lb, this.t + 384 - 8, 124, 16, 16, 16, 0, 16, 16, 8421631); //Draw images directly to the world map
+    eg(lb, this.t + 504 - 8, 116, 16, 16, 48, 0, 16, 16, 16777215);
+    eg(lb, this.t + 552 - 8, 116, 16, 16, 64, 0, 16, 16, 16777215);
+    eg(lb, this.t + 592 - 8, 100, 16, 16, 32, 0, 16, 16, 16777215);
+    eg(lb, this.t + 672 - 8, 68, 16, 16, 32, 0, 16, 16, 16777215);
+    eg(lb, this.t + 808 - 8, 132, 16, 16, 16, 0, 16, 16, 13434879);
+    eg(lb, this.t + 904 - 8, 164, 16, 16, 112, 0, 16, 16, 13434879);
+    eg(lb, this.t + 1040 - 8, 172, 16, 16, 128, 0, 16, 16, 13434879);
+    eg(lb, this.t + 1088 - 8, 100, 16, 16, 32, 0, 16, 16, 16777215);
+    eg(lb, this.t + 1160 - 8, 84, 16, 16, 32, 0, 16, 16, 16777215);
+    eg(lb, this.t + 1112 - 8, 44, 32, 16, 144, 0, 32, 16, 16777215);
     //manually placed map tiles (fuck me)
     /*
     eg(lb, this.t + 118 - 8, 112, 16, 16, 272, 0, 16, 16, 16777215);
@@ -5279,19 +5277,18 @@ uh.prototype.b = function() {
     eg(lb, this.t + 424 - 8, 72, 16, 16, 288, 0, 16, 16, 16777215);
     eg(lb, this.t + 311 - 8, 142, 16, 16, 320, 0, 16, 16, 16777215);
     eg(lb, this.t + 320 - 8, 176, 8, 16, 191, 0, 16, 16, 16777215);*/                        //VV Forces levels 33 and 71 to be invisible
-    for (a = 0; a < ze; a++) 0 != Ae[a] && (b = 8 * De[a][0], d = 8 * De[a][1], c = 0 == a || 20 == a || 47 == a || 77 == a ? 16777215 : 33 == a ? 0 : 71 == a ? 0 : 0 != (Ae[a] & Be) ? 10027008 : 13421568, 0 == De[a][2] && Hf(this.t + b, this.vert + d, 6, 6, c), c = 71 == a ? 3 : 24, Df(this.t + b,this.vert + d, c, c) && If(this.t + b, this.vert + d, c, c, 13369344));
+    for (a = 0; a < ze; a++) 0 != Ae[a] && (b = 8 * De[a][0], d = 8 * De[a][1], c = 0 == a || 20 == a || 47 == a || 77 == a ? 16777215 : 33 == a ? 0 : 71 == a ? 0 : 0 != (Ae[a] & Be) ? 10027008 : 13421568, 0 == De[a][2] && Hf(this.t + b, d, 6, 6, c), c = 71 == a ? 3 : 24, Df(this.t + b, d, c, c) && If(this.t + b, d, c, c, 13369344));
     b = 8 * De[h][0];
     d = 8 * De[h][1];
     ag(Qa, this.t + b + 1 - 12, this.vert + d - 14 - 11, 24, 22, 0, 0, 24, 22);
     for (a = 0; a < ze; a++)
-        0 != Ae[a] && (b = 8 * De[a][0], d = 8 * De[a][1], c = 71 == a ? 3 : 24 /*make level 71's hit box 3x3*/, Df(this.t + b, this.vert + d, c, c)) && (!Ef || 0 != a && 20 != a && 47 != a && 70 != a && 77 != a ? Ef && 0 != a && (h = a, nb = 0, f = 10) : (h = a, nb = 1, f = 50), b = K(cg, 1 + 4 * Uf[a].length, 510 - 4 * Uf[a].length), d = K(fg - 24, 8, 256), yf(D, b, d, Uf[a], 16777215, 5263440));
+        0 != Ae[a] && (b = 8 * De[a][0], d = 8 * De[a][1], c = 71 == a ? 3 : 24 /*make level 71's hit box 3x3*/, Df(this.t + b, d, c, c)) && (!Ef || 0 != a && 20 != a && 47 != a && 70 != a && 77 != a ? Ef && 0 != a && (h = a, nb = 0, f = 10) : (h = a, nb = 1, f = 50), b = K(cg, 1 + 4 * Uf[a].length, 510 - 4 * Uf[a].length), d = K(fg - 24, 8, 256), yf(D, b, d, Uf[a], 16777215, 5263440));
     a = D;
     a.Q = 4;
     yf(a, 256, 16, "World Map", -1, 13158600); //text at top of world map
     a.Q = 0;
     0 > this.t && yf(D, 12, 16, "<<", 13158600, 5263440);
-    - 720 < this.t && yf(D, 500, 16, ">>", 13158600, 5263440)
-    0 > this.vert && yf(D, 256, 16, "^^                  ^^", 13158600, 5263440); - 700 < this.vert && yf(D, 256, 250, "V       V       V", 13158600, 5263440)
+    - /* replace with 720 if want prev map*/120 < this.t && yf(D, 500, 16, ">>", 13158600, 5263440)
 };
 var vh = document,
     We = vh.getElementById("cv"),
